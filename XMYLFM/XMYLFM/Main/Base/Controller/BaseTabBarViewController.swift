@@ -46,6 +46,8 @@ extension BaseTabBarViewController{
             //设置选中图标的颜色
             UITabBar.appearance().tintColor = UIColor.red
             addChildViewController( BaseNavViewController(rootViewController: vc))
+            
+            self.selectedIndex = 4 
         }
         
     }

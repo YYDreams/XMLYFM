@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51E0F7D6005DCEE69AA1334D /* Pods_XMYLFMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */; };
+		569C7E3C50D5EDC5A84FE85E /* Pods_XMYLFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */; };
+		76BF9D10B140A75B74759F31 /* Pods_XMYLFMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */; };
+		786A8B91218A992C00A1677D /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B8F218A992C00A1677D /* MineCell.swift */; };
+		786A8B92218A992C00A1677D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8B90218A992C00A1677D /* MineCell.xib */; };
+		786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B93218AAB5100A1677D /* NetworkTool.swift */; };
+		786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B95218AAB8F00A1677D /* FMConst.swift */; };
+		786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B97218AAB9B00A1677D /* FMConstUrl.swift */; };
+		786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8BA0218AD77100A1677D /* FMLoginViewController.swift */; };
+		786A8BA5218AD77100A1677D /* FMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8BA1218AD77100A1677D /* FMLoginViewController.xib */; };
+		786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8BA6218AD77E00A1677D /* LoginHelper.swift */; };
 		78ED2E4621899FF200ADEC10 /* XMYLFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E4521899FF200ADEC10 /* XMYLFMTests.swift */; };
 		78ED2E5121899FF200ADEC10 /* XMYLFMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E5021899FF200ADEC10 /* XMYLFMUITests.swift */; };
 		78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E642189A56B00ADEC10 /* AppDelegate.swift */; };
 		78ED2E882189A56C00ADEC10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78ED2E812189A56C00ADEC10 /* LaunchScreen.storyboard */; };
-		78ED2E892189A56C00ADEC10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78ED2E832189A56C00ADEC10 /* Main.storyboard */; };
 		78ED2E8A2189A56C00ADEC10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78ED2E862189A56C00ADEC10 /* Assets.xcassets */; };
 		78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E8B2189A5C900ADEC10 /* BaseUIViewController.swift */; };
 		78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E8D2189A5E900ADEC10 /* BaseNavViewController.swift */; };
@@ -45,6 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FEF1B074FECF2256198D45A /* Pods-XMYLFMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		419982B0ED702356AF539E80 /* Pods-XMYLFMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5952AB1D0B283408C31B188F /* Pods-XMYLFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.release.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.release.xcconfig"; sourceTree = "<group>"; };
+		786A8B8F218A992C00A1677D /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCell.swift; sourceTree = "<group>"; };
+		786A8B90218A992C00A1677D /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
+		786A8B93218AAB5100A1677D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		786A8B95218AAB8F00A1677D /* FMConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMConst.swift; sourceTree = "<group>"; };
+		786A8B97218AAB9B00A1677D /* FMConstUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMConstUrl.swift; sourceTree = "<group>"; };
+		786A8BA0218AD77100A1677D /* FMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMLoginViewController.swift; sourceTree = "<group>"; };
+		786A8BA1218AD77100A1677D /* FMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMLoginViewController.xib; sourceTree = "<group>"; };
+		786A8BA6218AD77E00A1677D /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		78ED2E2D21899FF000ADEC10 /* XMYLFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMYLFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ED2E3C21899FF200ADEC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78ED2E4121899FF200ADEC10 /* XMYLFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMYLFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +77,6 @@
 		78ED2E5221899FF200ADEC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78ED2E642189A56B00ADEC10 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78ED2E822189A56C00ADEC10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		78ED2E842189A56C00ADEC10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78ED2E862189A56C00ADEC10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78ED2E8B2189A5C900ADEC10 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		78ED2E8D2189A5E900ADEC10 /* BaseNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +90,11 @@
 		78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
+		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569C7E3C50D5EDC5A84FE85E /* Pods_XMYLFM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BF9D10B140A75B74759F31 /* Pods_XMYLFMTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +118,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E0F7D6005DCEE69AA1334D /* Pods_XMYLFMUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		305861DF04405FF86B0C69AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */,
+				36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */,
+				80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		786A8B9E218AD77100A1677D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				786A8B9F218AD77100A1677D /* Controller */,
+				786A8BA2218AD77100A1677D /* LoginHelper */,
+				786A8BA3218AD77100A1677D /* Model */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		786A8B9F218AD77100A1677D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				786A8BA0218AD77100A1677D /* FMLoginViewController.swift */,
+				786A8BA1218AD77100A1677D /* FMLoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		786A8BA2218AD77100A1677D /* LoginHelper */ = {
+			isa = PBXGroup;
+			children = (
+				786A8BA6218AD77E00A1677D /* LoginHelper.swift */,
+			);
+			path = LoginHelper;
+			sourceTree = "<group>";
+		};
+		786A8BA3218AD77100A1677D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		78ED2E2421899FF000ADEC10 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +176,8 @@
 				78ED2E4421899FF200ADEC10 /* XMYLFMTests */,
 				78ED2E4F21899FF200ADEC10 /* XMYLFMUITests */,
 				78ED2E2E21899FF000ADEC10 /* Products */,
+				8B85660BFBDD4A67033FFBD7 /* Pods */,
+				305861DF04405FF86B0C69AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +241,8 @@
 		78ED2E602189A56B00ADEC10 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				786A8B95218AAB8F00A1677D /* FMConst.swift */,
+				786A8B97218AAB9B00A1677D /* FMConstUrl.swift */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -173,6 +250,7 @@
 		78ED2E612189A56B00ADEC10 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				786A8B93218AAB5100A1677D /* NetworkTool.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -369,6 +447,8 @@
 		78ED2E792189A56B00ADEC10 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				786A8B8F218A992C00A1677D /* MineCell.swift */,
+				786A8B90218A992C00A1677D /* MineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +488,7 @@
 		78ED2E7E2189A56B00ADEC10 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				786A8B9E218AD77100A1677D /* Login */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -425,7 +506,6 @@
 			isa = PBXGroup;
 			children = (
 				78ED2E812189A56C00ADEC10 /* LaunchScreen.storyboard */,
-				78ED2E832189A56C00ADEC10 /* Main.storyboard */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -438,6 +518,19 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		8B85660BFBDD4A67033FFBD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */,
+				5952AB1D0B283408C31B188F /* Pods-XMYLFM.release.xcconfig */,
+				0FEF1B074FECF2256198D45A /* Pods-XMYLFMTests.debug.xcconfig */,
+				E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */,
+				419982B0ED702356AF539E80 /* Pods-XMYLFMUITests.debug.xcconfig */,
+				8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,9 +538,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78ED2E5521899FF200ADEC10 /* Build configuration list for PBXNativeTarget "XMYLFM" */;
 			buildPhases = (
+				BE0C93B376A3AF75B0C02412 /* [CP] Check Pods Manifest.lock */,
 				78ED2E2921899FF000ADEC10 /* Sources */,
 				78ED2E2A21899FF000ADEC10 /* Frameworks */,
 				78ED2E2B21899FF000ADEC10 /* Resources */,
+				B2031B59E5BE745DB8DA1EF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,6 +557,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78ED2E5821899FF200ADEC10 /* Build configuration list for PBXNativeTarget "XMYLFMTests" */;
 			buildPhases = (
+				678555E5EF9FF2BAE3D72C74 /* [CP] Check Pods Manifest.lock */,
 				78ED2E3D21899FF200ADEC10 /* Sources */,
 				78ED2E3E21899FF200ADEC10 /* Frameworks */,
 				78ED2E3F21899FF200ADEC10 /* Resources */,
@@ -480,6 +576,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78ED2E5B21899FF200ADEC10 /* Build configuration list for PBXNativeTarget "XMYLFMUITests" */;
 			buildPhases = (
+				F599B7BA6F511C22F0F14798 /* [CP] Check Pods Manifest.lock */,
 				78ED2E4821899FF200ADEC10 /* Sources */,
 				78ED2E4921899FF200ADEC10 /* Frameworks */,
 				78ED2E4A21899FF200ADEC10 /* Resources */,
@@ -542,8 +639,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78ED2E892189A56C00ADEC10 /* Main.storyboard in Resources */,
 				78ED2E882189A56C00ADEC10 /* LaunchScreen.storyboard in Resources */,
+				786A8BA5218AD77100A1677D /* FMLoginViewController.xib in Resources */,
+				786A8B92218A992C00A1677D /* MineCell.xib in Resources */,
 				78ED2E8A2189A56C00ADEC10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +662,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		678555E5EF9FF2BAE3D72C74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XMYLFMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2031B59E5BE745DB8DA1EF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XMYLFM/Pods-XMYLFM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XMYLFM/Pods-XMYLFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE0C93B376A3AF75B0C02412 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XMYLFM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F599B7BA6F511C22F0F14798 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XMYLFMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		78ED2E2921899FF000ADEC10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -571,15 +748,21 @@
 			files = (
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
+				786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */,
+				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
 				78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */,
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
+				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
+				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
 				78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */,
 				78ED2E982189A68400ADEC10 /* ListenViewController.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
 				78ED2E9C2189A6A700ADEC10 /* PlayViewController.swift in Sources */,
 				78ED2E922189A62500ADEC10 /* BaseCell.swift in Sources */,
 				78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */,
+				786A8B91218A992C00A1677D /* MineCell.swift in Sources */,
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
+				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,
 				78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */,
 				78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */,
 			);
@@ -623,14 +806,6 @@
 				78ED2E822189A56C00ADEC10 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		78ED2E832189A56C00ADEC10 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				78ED2E842189A56C00ADEC10 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -752,11 +927,13 @@
 		};
 		78ED2E5621899FF200ADEC10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTFB24CDL;
 				INFOPLIST_FILE = XMYLFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -770,11 +947,13 @@
 		};
 		78ED2E5721899FF200ADEC10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5952AB1D0B283408C31B188F /* Pods-XMYLFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTFB24CDL;
 				INFOPLIST_FILE = XMYLFM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -788,6 +967,7 @@
 		};
 		78ED2E5921899FF200ADEC10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FEF1B074FECF2256198D45A /* Pods-XMYLFMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -809,6 +989,7 @@
 		};
 		78ED2E5A21899FF200ADEC10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -830,6 +1011,7 @@
 		};
 		78ED2E5C21899FF200ADEC10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419982B0ED702356AF539E80 /* Pods-XMYLFMUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -850,6 +1032,7 @@
 		};
 		78ED2E5D21899FF200ADEC10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

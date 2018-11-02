@@ -40,7 +40,7 @@ extension BaseTabBarViewController{
         
         for (index, vc) in controllers.enumerated() {
             
-            vc.title = titles[index]
+            vc.tabBarItem.title = titles[index]
             vc.tabBarItem.image = UIImage(named: normalImageNames[index])
             vc.tabBarItem.selectedImage = UIImage(named: selectImageNames[index])
             //设置选中图标的颜色

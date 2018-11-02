@@ -14,9 +14,23 @@ import Foundation
 //配置Host
 let MAIN_URL_6 = "http://180.153.255.6"
 //
-let MAIN_URL = "http://mobile.ximalaya.com"
+//let MAIN_URL = "http://mobile.ximalaya.com"
 
 
+
+
+let MAIN_URL = "http://www.mocky.io"
+
+
+//我的
+let kMobileUrl = "/v2/5bdbab503200004e3c3ad5d3"
+
+
+
+/****************发现***********/
+
+//顶部
+let kDiscoveryTabsUrl = "/discovery-stream-mobile/discoveryPage/wholeContent/tabs/ts-1541140247973"
 
 
 
@@ -36,7 +50,7 @@ let kPasswordSecurityResetUrl = "/api/passport/password/security/reset/mobile/aj
 
 
 
-let kMobileUrl = "/mobile/homePage/"
+//let kMobileUrl = "/mobile/homePage/"
 
 
 //http://180.153.255.6/mobile/v2/point/query

@@ -13,8 +13,9 @@ class BaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    self.view.backgroundColor = UIColor.red
+        tableView.tableFooterView = UIView()
+
+       self.view.backgroundColor = bgColor
         
         
         

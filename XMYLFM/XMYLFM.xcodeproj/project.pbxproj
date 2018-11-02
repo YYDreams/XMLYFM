@@ -10,6 +10,13 @@
 		51E0F7D6005DCEE69AA1334D /* Pods_XMYLFMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */; };
 		569C7E3C50D5EDC5A84FE85E /* Pods_XMYLFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */; };
 		76BF9D10B140A75B74759F31 /* Pods_XMYLFMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */; };
+		7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817E375218C436D00385D70 /* DiscoverHeaderCell.swift */; };
+		7817E378218C4E2800385D70 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817E377218C4E2800385D70 /* UIColor+Extension.swift */; };
+		7830165A218BE42B005C148F /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301659218BE42B005C148F /* MineModel.swift */; };
+		7830165C218C0801005C148F /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830165B218C0801005C148F /* UIBarButtonItem+Extension.swift */; };
+		78301660218C274D005C148F /* DiscoverHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830165F218C274D005C148F /* DiscoverHeaderView.swift */; };
+		78301662218C276A005C148F /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301661218C276A005C148F /* DiscoverModel.swift */; };
+		78301665218C2A24005C148F /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301664218C2A24005C148F /* DiscoverViewModel.swift */; };
 		786A8B91218A992C00A1677D /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B8F218A992C00A1677D /* MineCell.swift */; };
 		786A8B92218A992C00A1677D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8B90218A992C00A1677D /* MineCell.xib */; };
 		786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B93218AAB5100A1677D /* NetworkTool.swift */; };
@@ -59,7 +66,14 @@
 		36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		419982B0ED702356AF539E80 /* Pods-XMYLFMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5952AB1D0B283408C31B188F /* Pods-XMYLFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.release.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.release.xcconfig"; sourceTree = "<group>"; };
-		786A8B8F218A992C00A1677D /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCell.swift; sourceTree = "<group>"; };
+		7817E375218C436D00385D70 /* DiscoverHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHeaderCell.swift; sourceTree = "<group>"; };
+		7817E377218C4E2800385D70 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		78301659218BE42B005C148F /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
+		7830165B218C0801005C148F /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		7830165F218C274D005C148F /* DiscoverHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHeaderView.swift; sourceTree = "<group>"; };
+		78301661218C276A005C148F /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
+		78301664218C2A24005C148F /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		786A8B8F218A992C00A1677D /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MineCell.swift; sourceTree = "<group>"; };
 		786A8B90218A992C00A1677D /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
 		786A8B93218AAB5100A1677D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		786A8B95218AAB8F00A1677D /* FMConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMConst.swift; sourceTree = "<group>"; };
@@ -133,6 +147,14 @@
 				80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78301663218C2A10005C148F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				78301664218C2A24005C148F /* DiscoverViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		786A8B9E218AD77100A1677D /* Login */ = {
@@ -234,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */,
+				7830165B218C0801005C148F /* UIBarButtonItem+Extension.swift */,
+				7817E377218C4E2800385D70 /* UIColor+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -326,6 +350,7 @@
 		78ED2E6A2189A56B00ADEC10 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				78301663218C2A10005C148F /* ViewModel */,
 				78ED2E6B2189A56B00ADEC10 /* Controller */,
 				78ED2E6C2189A56B00ADEC10 /* Model */,
 				78ED2E6D2189A56B00ADEC10 /* View */,
@@ -344,6 +369,7 @@
 		78ED2E6C2189A56B00ADEC10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78301661218C276A005C148F /* DiscoverModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +377,8 @@
 		78ED2E6D2189A56B00ADEC10 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7830165F218C274D005C148F /* DiscoverHeaderView.swift */,
+				7817E375218C436D00385D70 /* DiscoverHeaderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +468,7 @@
 		78ED2E782189A56B00ADEC10 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78301659218BE42B005C148F /* MineModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -689,14 +718,22 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XMYLFM/Pods-XMYLFM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/LTScrollView/LTScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -748,13 +785,17 @@
 			files = (
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
+				7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */,
 				786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */,
 				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
+				7830165A218BE42B005C148F /* MineModel.swift in Sources */,
 				78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */,
+				78301662218C276A005C148F /* DiscoverModel.swift in Sources */,
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
 				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
 				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
 				78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */,
+				7830165C218C0801005C148F /* UIBarButtonItem+Extension.swift in Sources */,
 				78ED2E982189A68400ADEC10 /* ListenViewController.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
 				78ED2E9C2189A6A700ADEC10 /* PlayViewController.swift in Sources */,
@@ -764,6 +805,9 @@
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
 				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,
 				78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */,
+				78301665218C2A24005C148F /* DiscoverViewModel.swift in Sources */,
+				7817E378218C4E2800385D70 /* UIColor+Extension.swift in Sources */,
+				78301660218C274D005C148F /* DiscoverHeaderView.swift in Sources */,
 				78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

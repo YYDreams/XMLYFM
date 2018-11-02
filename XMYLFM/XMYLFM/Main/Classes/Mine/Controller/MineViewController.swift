@@ -8,13 +8,12 @@
 
 import UIKit
 
-
 private let MineCellID = "MineCellID"
+
 class MineViewController: BaseTableViewController {
+    //MARK: -  Lazy Methods
+    private lazy var model: MineModel = MineModel()
 
-
-    
-    
     private lazy var  dataArr: Array = {
        
         return [
@@ -27,43 +26,29 @@ class MineViewController: BaseTableViewController {
               ]
     }()
     
+    
+//MARK:
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        
+           setupNav()
+        
+          setupTableView()
+        
+        loadDataFormNetwork()
 
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
-        
-        
-        
-        
-        
-        
+
     }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        loadDataFormNetwork()
-        
-    }
-    @objc private func loginSuccess(){
-        
-        loadDataFormNetwork()
-        
-        self.tableView.reloadData()
-        
-    }
-    
    
 
 }
 
-
+//MARK: setupUI Methods
 extension MineViewController{
     
     
@@ -75,9 +60,66 @@ extension MineViewController{
         tableView.delegate = self
     }
     
+    private func setupNav(){
+        
+        let messageBtn = UIBarButtonItem.item(imageName: "msg", target: self, action: #selector(messageOnClick))
+        let settingBtn = UIBarButtonItem.item(imageName: "set", target: self, action: #selector(settingOnClick))
+
+        navigationItem.rightBarButtonItems  = [settingBtn,messageBtn]
+
+    }
+}
+//MARK: SEL Methods
+extension MineViewController{
+    
+    
+    @objc private func loginSuccess(){
+        
+        loadDataFormNetwork()
+        
+        
+    }
+    @objc private func messageOnClick(){
+        
+        print("messageOnClick")
+        
+    }
+    @objc private func settingOnClick(){
+        
+        print("settingOnClick")
+
+        
+    }
     
 }
 
+//MARK: loadDataFormNetwork
+extension MineViewController{
+    
+    private func loadDataFormNetwork(){
+        
+        
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kMobileUrl, parameters: [:]) { (result, error) in
+            if error != nil {  return  }
+            
+            guard  let resultDic  = result as? [String : AnyObject] else{
+                
+                return
+            }
+            
+            let   object:MineModel = MineModel.deserialize(from: resultDic)!
+            
+            self.model = object
+            
+            self.tableView.reloadData()
+            
+        }
+    }
+    
+}
+
+
+//MARK: <UITableViewDataSource>
 extension MineViewController{
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,14 +131,12 @@ extension MineViewController{
 
         
         return section == 0 ? 1 : dataArr[section - 1].count
-        
-        
-        
+
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-        return indexPath.section == 0 ? 380 : 45
+        return indexPath.section == 0 ? 385 : 45
         
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -108,11 +148,10 @@ extension MineViewController{
         return 10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
-//
+
         if indexPath.section == 0 {
             let mineCell =  tableView.dequeueReusableCell(withIdentifier: MineCellID, for: indexPath) as! MineCell
-
+             mineCell.model = self.model
             mineCell.handerLoginBtnOnClickCallBack = { () -> Void in
 
                 let loginVc = BaseNavViewController(rootViewController: FMLoginViewController())
@@ -124,47 +163,18 @@ extension MineViewController{
             return mineCell
 
         }else{
-        
-            
+
           let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
          
               cell.textLabel?.text = dataArr[indexPath.section - 1][indexPath.row]["title"]
             return cell
         }
-        
-  
 
     }
     
 }
 
-//MARK: loadDataFormNetwork
-extension MineViewController{
-    
-    // /mobile/homePage/?date=20181101&device=iPhone&playDuration=0&timestamp=1541043503000&uid=136001372 HTTP/1.1
-    
-    
-    private func loadDataFormNetwork(){
-        let param = ["date":"20181101",
-                     "device":"iPhone",
-                     "playDuration":"0",
-                     "timestamp":"1541043503000",
-                     "uid":"136001372"
-                     ]
-        
-        NetworkTool.shareNetworkTool().request(methodType: .GET,baseUrl:MAIN_URL_6,urlString: kMobileUrl, parameters: param as [String : AnyObject]) { (result, error) in
-            
-            
-            print("res \(String(describing: result)), \(error)")
-            
-        }
-        
-    }
-    
-    
-    
-    
-    
-}
+
+
 
 

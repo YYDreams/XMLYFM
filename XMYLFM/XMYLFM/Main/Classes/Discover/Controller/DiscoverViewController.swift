@@ -31,6 +31,8 @@ class DiscoverViewController: BaseTableViewController {
         return [oneVc, twoVc, threeVc,thrVc]
     }()
     
+    
+    //http://180.153.255.6/nexus/v1/tabs/1541140247976?osType=ios&version=6.5.24
     private lazy var titles: [String] = {
         
         return ["关注", "推荐", "圈子","趣配音"]

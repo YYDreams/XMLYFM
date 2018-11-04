@@ -9,7 +9,7 @@
 import UIKit
 
 private let MineCellID = "MineCellID"
-
+//
 class MineViewController: BaseTableViewController {
     //MARK: -  Lazy Methods
     private lazy var model: MineModel = MineModel()
@@ -45,7 +45,6 @@ class MineViewController: BaseTableViewController {
         NotificationCenter.default.removeObserver(self)
     }
    
-
 }
 
 //MARK: setupUI Methods
@@ -75,7 +74,9 @@ extension MineViewController{
     
     @objc private func loginSuccess(){
         
+        print("token:___________________\(UserInfoModel.userInfo()?.token! ?? "")")
         loadDataFormNetwork()
+        
         
         
     }
@@ -99,7 +100,7 @@ extension MineViewController{
     private func loadDataFormNetwork(){
         
         
-        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kMobileUrl, parameters: [:]) { (result, error) in
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_MOCKY, urlString: kMobileUrl, parameters: [:]) { (result, error) in
             if error != nil {  return  }
             
             guard  let resultDic  = result as? [String : AnyObject] else{
@@ -136,15 +137,17 @@ extension MineViewController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-        return indexPath.section == 0 ? 385 : 45
+        return indexPath.section == 0 ? 375 : 45
         
+    }
+    
+   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+    return UIView()
+    
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 30
-    }
-   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    
         return 10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -157,7 +160,6 @@ extension MineViewController{
                 let loginVc = BaseNavViewController(rootViewController: FMLoginViewController())
 
                 self.present(loginVc, animated: true, completion: nil)
-
             }
 
             return mineCell
@@ -173,8 +175,3 @@ extension MineViewController{
     }
     
 }
-
-
-
-
-

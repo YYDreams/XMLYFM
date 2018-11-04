@@ -42,6 +42,7 @@
 		78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */; };
 		78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */; };
 		78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */; };
+		9C58F4C6218D253900AE569F /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58F4C5218D253900AE569F /* UserInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
 		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9C58F4C5218D253900AE569F /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfoModel.swift; path = ../../../../../../../../../../Documents/UserInfoModel.swift; sourceTree = "<group>"; };
 		C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +164,7 @@
 			children = (
 				786A8B9F218AD77100A1677D /* Controller */,
 				786A8BA2218AD77100A1677D /* LoginHelper */,
-				786A8BA3218AD77100A1677D /* Model */,
+				9C58F4C4218D251E00AE569F /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -182,13 +184,6 @@
 				786A8BA6218AD77E00A1677D /* LoginHelper.swift */,
 			);
 			path = LoginHelper;
-			sourceTree = "<group>";
-		};
-		786A8BA3218AD77100A1677D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		78ED2E2421899FF000ADEC10 = {
@@ -560,6 +555,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C58F4C4218D251E00AE569F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C58F4C5218D253900AE569F /* UserInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -783,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C58F4C6218D253900AE569F /* UserInfoModel.swift in Sources */,
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
 				7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */,

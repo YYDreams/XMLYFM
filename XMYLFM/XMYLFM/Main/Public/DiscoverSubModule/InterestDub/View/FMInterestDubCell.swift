@@ -11,22 +11,22 @@ import UIKit
 class FMInterestDubCell: BaseCell {
 
     
-    
-    
+    //播放时间以及播放次数
     @IBOutlet weak var durationLabel: UILabel!
     
-    
+    //title
     @IBOutlet weak var titleLabel: UILabel!
-
     
+    //用户昵称
     @IBOutlet weak var nicknameLabel: UILabel!
 
-    
+    //用户头像
     @IBOutlet weak var logoPicImgView: UIImageView!
 
+    //点赞数量
     @IBOutlet weak var favoritesLabel: UILabel!
-
     
+    //消息数量
     @IBOutlet weak var commentCountLabel: UILabel!
 
     

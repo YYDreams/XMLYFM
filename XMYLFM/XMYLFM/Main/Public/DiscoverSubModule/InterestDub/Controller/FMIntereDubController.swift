@@ -11,7 +11,7 @@ import LTScrollView
 
 class FMIntereDubController: UIViewController,LTTableViewProtocal {
     
-    private lazy var intereDubModel: FMIntereDubModel = FMIntereDubModel()
+    private lazy var dataArr: [FMIntereDubModel] = [FMIntereDubModel]()
     //MARK:Lazy Method
     private lazy var tableView: UITableView = {
         let tableView = tableViewConfig(self, self, .plain)
@@ -41,7 +41,7 @@ extension FMIntereDubController{
     private func loadDataFormNetwork(){
         
       
-        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kDiscoveryrackUrl, parameters: [:]) { (result, error) in
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kDiscoverIntereDubUrl, parameters: [:]) { (result, error) in
             
             if error != nil {
                 return
@@ -51,17 +51,24 @@ extension FMIntereDubController{
                 return
             }
             
+//            let dataDic = resultDic["data"] as? [[String: AnyObject]]
             
-            let dataDic = resultDic["trackInfo"]
+
             
-            guard let resultDataDic = dataDic as? [String : AnyObject] else{
-                
+            guard let resultArr =  resultDic["data"]!["dubbingItem"] as? [[String: AnyObject]] else{
                 return
             }
+
+//            guard let  dubbingItem = dataDic!["dubbingItem"] else{ return}
+            for dubbingModel in resultArr {
+                
+                let model: FMIntereDubModel = FMIntereDubModel.deserialize(from: dubbingModel)!
+                
+                self.dataArr.append(model)
+                
+            }
             
-            let model:FMIntereDubModel  = FMIntereDubModel.deserialize(from: resultDataDic)!
-         
-            self.intereDubModel = model
+
             self.tableView.reloadData()
         }
     }
@@ -86,13 +93,13 @@ extension FMIntereDubController: UITableViewDelegate, UITableViewDataSource{
 
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataArr.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FMInterestDubCellID", for: indexPath)  as! FMInterestDubCell
-        cell.model = self.intereDubModel
+        cell.model = self.dataArr[indexPath.row]
         return cell
     }
     

@@ -41,7 +41,7 @@ let kDiscoveryCommunityUrl = "/community/v1/communities/recommendations?pageSize
 
 
 //趣配音
-let kDiscoveryrackUrl = "/mobile/track/v2/baseInfo/ts-1541410995458?device=iPhone&trackId=134378765"
+let kDiscoverIntereDubUrl = "/v2/5be0511732000063006495c9"
 
 
 /****************登录******************/

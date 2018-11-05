@@ -91,6 +91,7 @@ extension FMCircleController{
         
         imgView.frame = CGRect(x: 10, y: 10, width: screenW - 2 * 10, height: 150 - 2 * 10)
         
+        footerView.backgroundColor = UIColor.white
         footerView.addSubview(imgView)
         tableView.tableFooterView =  footerView
         

@@ -30,6 +30,7 @@ class MineCell: BaseCell {
     @IBOutlet weak var vipTipLabel: UILabel! // vip会员占位文字
     
     @IBOutlet weak var subTitleLabel: UILabel!  //听满3小时。。。。。
+    @IBOutlet weak var followingAndUserNameConst: NSLayoutConstraint!
     
     
     /**
@@ -50,26 +51,44 @@ class MineCell: BaseCell {
             guard let model = model else {
                 return
             }
+            
+            userTitleLabel.isHidden  = !UserInfoModel.isLoginStatus()
+            
+            if !UserInfoModel.isLoginStatus() {
+                
+                userNameLabel.text = "点击登录"
+                
+                followingsLabel.text = "登录后数据不丢失"
+                
+                jfTipLabel.text =  "登录领取\n积分会员"
+               
+                subTitleLabel.text  = nil
+                
+                followingAndUserNameConst.constant = 15
+                
+            }else{
+                followingAndUserNameConst.constant = 10
 
-            userNameLabel.text = model.nickname
-            userTitleLabel.text = model.userTitle
-            followingsLabel.text = "粉丝 \(model.favorites)  关注\(model.followings)"
-            
-            vipTipLabel.text = model.vipTip
-            
-         let checkInReminder = model.checkInRemindInfo?.checkInReminder ?? ""
-            let checkInReward = model.checkInRemindInfo?.checkInReward ?? ""
-            jfTipLabel.text =  checkInReminder + "\n" + checkInReward
-         
-            if   model.checkInRemindInfo?.iconPath != nil{
+                userNameLabel.text = model.nickname
+                userTitleLabel.text = " LV+ \( model.userTitle ?? "")) "
+                followingsLabel.text = "粉丝 \(model.favorites)  关注\(model.followings)"
+                subTitleLabel.text =  " 听满3小时，即可解锁我的成就>  "
+                vipTipLabel.text = model.vipTip ?? ""
+                let checkInReminder = model.checkInRemindInfo?.checkInReminder ?? ""
+                let checkInReward = model.checkInRemindInfo?.checkInReward ?? ""
+                jfTipLabel.text =  checkInReminder + "\n" + checkInReward
+                //FIXME: 待修改的问题 图片是gif做显示
+                if   model.checkInRemindInfo?.iconPath != nil{
+                    
+                    
+                    let url = URL(string: (model.checkInRemindInfo?.iconPath!)!)
+                    
+                    let data =  NSData(contentsOf: url!)
+                    iconPathImgView.image = UIImage(data: data! as Data)
+                }
                 
-                
-                let url = URL(string: (model.checkInRemindInfo?.iconPath!)!)
-                
-                let data =  NSData(contentsOf: url!)
-                iconPathImgView.image = UIImage(data: data! as Data)
             }
- 
+
         }
 
     }
@@ -77,10 +96,18 @@ class MineCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        subTitleLabel.layer.masksToBounds = true
-        subTitleLabel.layer.cornerRadius = 8
-        subTitleLabel.layer.borderWidth = 1.0;
-        subTitleLabel.layer.borderColor = bgColor.cgColor
+        if UserInfoModel.isLoginStatus() {
+            subTitleLabel.layer.masksToBounds = true
+            subTitleLabel.layer.cornerRadius = 8
+            subTitleLabel.layer.borderWidth = 1.0;
+            subTitleLabel.layer.borderColor = bgColor.cgColor
+            
+            userTitleLabel.layer.masksToBounds = true
+            userTitleLabel.layer.cornerRadius = 5
+            
+        }
+        
+ 
 
     }
 
@@ -88,18 +115,17 @@ class MineCell: BaseCell {
     @IBAction func isLoginBtnOnClick(_ sender: UIButton) {
         
         print("---------------------------")
-        sender.isUserInteractionEnabled = !LoginHelper.isLoginStatus()
         
-        if !LoginHelper.isLoginStatus() {
+        if !UserInfoModel.isLoginStatus() {
             
-            
-            
+            sender.isUserInteractionEnabled  = false
+
             if self.handerLoginBtnOnClickCallBack != nil {
                 
                 self.handerLoginBtnOnClickCallBack!()
             }
             
-        }
+        }else{}
         
         
     }

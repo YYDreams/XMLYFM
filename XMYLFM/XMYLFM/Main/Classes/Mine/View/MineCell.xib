@@ -50,9 +50,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vup-lr-P3O">
-                                <rect key="frame" x="131" y="15" width="37.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="131" y="15" width="31" height="14.5"/>
+                                <color key="backgroundColor" red="0.27095149774444127" green="0.76178685018913828" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vp-KL-t1d">
@@ -131,7 +132,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIP会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btS-hd-O6i">
-                                <rect key="frame" x="40" y="14" width="54" height="18"/>
+                                <rect key="frame" x="50" y="14" width="54" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.95523184537887573" green="0.63036529274956699" blue="0.25450305908321497" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -145,7 +146,7 @@
                             <constraint firstAttribute="bottom" secondItem="29P-Cy-pGF" secondAttribute="bottom" id="QLZ-EU-gY7"/>
                             <constraint firstItem="j9x-dj-bNM" firstAttribute="centerY" secondItem="nLC-Mo-sxh" secondAttribute="centerY" id="Qfh-qR-UFh"/>
                             <constraint firstAttribute="height" constant="45" id="W1H-ca-Yhc"/>
-                            <constraint firstItem="btS-hd-O6i" firstAttribute="leading" secondItem="nLC-Mo-sxh" secondAttribute="leading" constant="40" id="bEv-1Z-YTX"/>
+                            <constraint firstItem="btS-hd-O6i" firstAttribute="leading" secondItem="nLC-Mo-sxh" secondAttribute="leading" constant="50" id="bEv-1Z-YTX"/>
                             <constraint firstItem="29P-Cy-pGF" firstAttribute="leading" secondItem="nLC-Mo-sxh" secondAttribute="leading" constant="10" id="fjD-as-MTB"/>
                             <constraint firstItem="29P-Cy-pGF" firstAttribute="top" secondItem="nLC-Mo-sxh" secondAttribute="top" id="vrX-6x-CCq"/>
                         </constraints>
@@ -164,7 +165,7 @@
                                 <string key="text">0
  优惠券</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-uo-d7q">
@@ -175,7 +176,7 @@
                                 <string key="text">0
  直播喜钻</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMc-bf-gtc">
@@ -186,14 +187,14 @@
                                 <string key="text">0
  喜点</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGL-ge-Yyx">
                                 <rect key="frame" x="300" y="0.0" width="75" height="90"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <inset key="titleEdgeInsets" minX="-35" minY="40" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="20" minY="-20" maxX="20" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-35" minY="32" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="-18" maxX="20" maxY="10"/>
                                 <state key="normal" title="我的钱包" image="钱数">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -203,7 +204,7 @@
                                 <string key="text">0
  已购</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -331,6 +332,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="avatarImgView" destination="aJF-Fs-RZX" id="b01-ab-U3O"/>
+                <outlet property="followingAndUserNameConst" destination="Nfo-IV-9Gj" id="3pn-Pg-4ew"/>
                 <outlet property="followingsLabel" destination="RoZ-28-zbH" id="3SM-r8-Cim"/>
                 <outlet property="iconPathImgView" destination="FPY-1j-20W" id="OAN-nL-unF"/>
                 <outlet property="isLoginBtn" destination="apI-4C-o7h" id="2dp-IJ-kFc"/>

@@ -47,7 +47,7 @@ extension BaseTabBarViewController{
             UITabBar.appearance().tintColor = UIColor.red
             addChildViewController( BaseNavViewController(rootViewController: vc))
             
-            self.selectedIndex = 4 
+            self.selectedIndex = 3
         }
         
     }

@@ -20,22 +20,35 @@ let MAIN_URL = "http://mobile.ximalaya.com"
 let MAIN_URL_MOCKY = "http://www.mocky.io"
 
 
-//我的
+let MAIN_URL_M_XMLY = "http://m.ximalaya.com"
+
+
+/****************我的******************/
+//个人信息
 let kMobileUrl = "/v2/5bdbab503200004e3c3ad5d3"
-
-
-
-/****************发现***********/
+//积分查询
+let kPointQueryUrl = "/v2/5bdbab503200004e3c3ad5d3"
+//
+/****************发现******************/
 
 //顶部
 let kDiscoveryTabsUrl = "/discovery-stream-mobile/discoveryPage/wholeContent/tabs/ts-1541140247973"
 
 
+//可能感兴趣的圈子
+let kDiscoveryCommunityUrl = "/community/v1/communities/recommendations?pageSize=20"
+//http://m.ximalaya.com/community/v1/communities/recommendations?pageSize=20
 
-/**************登录**************/
+
+//趣配音
+let kDiscoveryrackUrl = "/mobile/track/v2/baseInfo/ts-1541410995458?device=iPhone&trackId=134378765"
+
+
+/****************登录******************/
 let kLoginUrl = "/v2/5bdce8df33000066298136b8"
 
-
+//退出登录
+let kLogoutUrl = "/v2/5bdfa9a8310000891b9e406d"
 
 /********************************************************/
 

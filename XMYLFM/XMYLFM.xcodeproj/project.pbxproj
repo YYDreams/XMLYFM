@@ -17,6 +17,18 @@
 		78301660218C274D005C148F /* DiscoverHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830165F218C274D005C148F /* DiscoverHeaderView.swift */; };
 		78301662218C276A005C148F /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301661218C276A005C148F /* DiscoverModel.swift */; };
 		78301665218C2A24005C148F /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301664218C2A24005C148F /* DiscoverViewModel.swift */; };
+		783156A3218FD67D00D0D890 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156A2218FD67D00D0D890 /* UserInfoModel.swift */; };
+		783156BA2190258000D0D890 /* FMRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156B92190258000D0D890 /* FMRecommendController.swift */; };
+		783156BC2190259E00D0D890 /* FMIntereDubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156BB2190259E00D0D890 /* FMIntereDubController.swift */; };
+		783156BE219025B900D0D890 /* FMCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156BD219025B900D0D890 /* FMCircleController.swift */; };
+		783156C0219025CF00D0D890 /* FMFollowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156BF219025CF00D0D890 /* FMFollowController.swift */; };
+		783156C22190275A00D0D890 /* FMCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C12190275A00D0D890 /* FMCircleModel.swift */; };
+		783156C42190336A00D0D890 /* FMCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C32190336A00D0D890 /* FMCollectionView.swift */; };
+		783156C62190339600D0D890 /* FMCircleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C52190339600D0D890 /* FMCircleViewCell.swift */; };
+		783156C8219037B300D0D890 /* FMCircleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C7219037B300D0D890 /* FMCircleCollectionCell.swift */; };
+		783156CB21904A6500D0D890 /* FMInterestDubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C921904A6500D0D890 /* FMInterestDubCell.swift */; };
+		783156CC21904A6500D0D890 /* FMInterestDubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783156CA21904A6500D0D890 /* FMInterestDubCell.xib */; };
+		783156CE21904AE000D0D890 /* FMIntereDubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156CD21904AE000D0D890 /* FMIntereDubModel.swift */; };
 		786A8B91218A992C00A1677D /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B8F218A992C00A1677D /* MineCell.swift */; };
 		786A8B92218A992C00A1677D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8B90218A992C00A1677D /* MineCell.xib */; };
 		786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B93218AAB5100A1677D /* NetworkTool.swift */; };
@@ -42,7 +54,6 @@
 		78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */; };
 		78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */; };
 		78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */; };
-		9C58F4C6218D253900AE569F /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58F4C5218D253900AE569F /* UserInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +85,18 @@
 		7830165F218C274D005C148F /* DiscoverHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHeaderView.swift; sourceTree = "<group>"; };
 		78301661218C276A005C148F /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
 		78301664218C2A24005C148F /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
+		783156A2218FD67D00D0D890 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		783156B92190258000D0D890 /* FMRecommendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRecommendController.swift; sourceTree = "<group>"; };
+		783156BB2190259E00D0D890 /* FMIntereDubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMIntereDubController.swift; sourceTree = "<group>"; };
+		783156BD219025B900D0D890 /* FMCircleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCircleController.swift; sourceTree = "<group>"; };
+		783156BF219025CF00D0D890 /* FMFollowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMFollowController.swift; sourceTree = "<group>"; };
+		783156C12190275A00D0D890 /* FMCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCircleModel.swift; sourceTree = "<group>"; };
+		783156C32190336A00D0D890 /* FMCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCollectionView.swift; sourceTree = "<group>"; };
+		783156C52190339600D0D890 /* FMCircleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCircleViewCell.swift; sourceTree = "<group>"; };
+		783156C7219037B300D0D890 /* FMCircleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCircleCollectionCell.swift; sourceTree = "<group>"; };
+		783156C921904A6500D0D890 /* FMInterestDubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInterestDubCell.swift; sourceTree = "<group>"; };
+		783156CA21904A6500D0D890 /* FMInterestDubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMInterestDubCell.xib; sourceTree = "<group>"; };
+		783156CD21904AE000D0D890 /* FMIntereDubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMIntereDubModel.swift; sourceTree = "<group>"; };
 		786A8B8F218A992C00A1677D /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MineCell.swift; sourceTree = "<group>"; };
 		786A8B90218A992C00A1677D /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
 		786A8B93218AAB5100A1677D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
@@ -108,7 +131,6 @@
 		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
 		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9C58F4C5218D253900AE569F /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfoModel.swift; path = ../../../../../../../../../../Documents/UserInfoModel.swift; sourceTree = "<group>"; };
 		C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +179,151 @@
 				78301664218C2A24005C148F /* DiscoverViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		783156A42190248E00D0D890 /* DiscoverSubModule */ = {
+			isa = PBXGroup;
+			children = (
+				783156A92190248E00D0D890 /* Follow */,
+				783156B12190248E00D0D890 /* Recommend */,
+				783156A52190248E00D0D890 /* Circle */,
+				783156AD2190248E00D0D890 /* InterestDub */,
+			);
+			path = DiscoverSubModule;
+			sourceTree = "<group>";
+		};
+		783156A52190248E00D0D890 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				783156A62190248E00D0D890 /* Controller */,
+				783156A72190248E00D0D890 /* Model */,
+				783156A82190248E00D0D890 /* View */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		783156A62190248E00D0D890 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				783156BD219025B900D0D890 /* FMCircleController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		783156A72190248E00D0D890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				783156C12190275A00D0D890 /* FMCircleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		783156A82190248E00D0D890 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				783156C52190339600D0D890 /* FMCircleViewCell.swift */,
+				783156C7219037B300D0D890 /* FMCircleCollectionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		783156A92190248E00D0D890 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				783156AA2190248E00D0D890 /* Controller */,
+				783156AB2190248E00D0D890 /* Model */,
+				783156AC2190248E00D0D890 /* View */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		783156AA2190248E00D0D890 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				783156BF219025CF00D0D890 /* FMFollowController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		783156AB2190248E00D0D890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		783156AC2190248E00D0D890 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		783156AD2190248E00D0D890 /* InterestDub */ = {
+			isa = PBXGroup;
+			children = (
+				783156AE2190248E00D0D890 /* Controller */,
+				783156AF2190248E00D0D890 /* Model */,
+				783156B02190248E00D0D890 /* View */,
+			);
+			path = InterestDub;
+			sourceTree = "<group>";
+		};
+		783156AE2190248E00D0D890 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				783156BB2190259E00D0D890 /* FMIntereDubController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		783156AF2190248E00D0D890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				783156CD21904AE000D0D890 /* FMIntereDubModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		783156B02190248E00D0D890 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				783156C921904A6500D0D890 /* FMInterestDubCell.swift */,
+				783156CA21904A6500D0D890 /* FMInterestDubCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		783156B12190248E00D0D890 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				783156B22190248E00D0D890 /* Controller */,
+				783156B32190248E00D0D890 /* Model */,
+				783156B42190248E00D0D890 /* View */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		783156B22190248E00D0D890 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				783156B92190258000D0D890 /* FMRecommendController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		783156B32190248E00D0D890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		783156B42190248E00D0D890 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		786A8B9E218AD77100A1677D /* Login */ = {
@@ -253,6 +420,7 @@
 				78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */,
 				7830165B218C0801005C148F /* UIBarButtonItem+Extension.swift */,
 				7817E377218C4E2800385D70 /* UIColor+Extension.swift */,
+				783156C32190336A00D0D890 /* FMCollectionView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -333,11 +501,11 @@
 		78ED2E692189A56B00ADEC10 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				78ED2E6A2189A56B00ADEC10 /* Discover */,
 				78ED2E6E2189A56B00ADEC10 /* Home */,
 				78ED2E722189A56B00ADEC10 /* Listen */,
-				78ED2E762189A56B00ADEC10 /* Mine */,
 				78ED2E7A2189A56B00ADEC10 /* Play */,
+				78ED2E6A2189A56B00ADEC10 /* Discover */,
+				78ED2E762189A56B00ADEC10 /* Mine */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -512,6 +680,7 @@
 		78ED2E7E2189A56B00ADEC10 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				783156A42190248E00D0D890 /* DiscoverSubModule */,
 				786A8B9E218AD77100A1677D /* Login */,
 			);
 			path = Public;
@@ -558,7 +727,7 @@
 		9C58F4C4218D251E00AE569F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C58F4C5218D253900AE569F /* UserInfoModel.swift */,
+				783156A2218FD67D00D0D890 /* UserInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -672,6 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ED2E882189A56C00ADEC10 /* LaunchScreen.storyboard in Resources */,
+				783156CC21904A6500D0D890 /* FMInterestDubCell.xib in Resources */,
 				786A8BA5218AD77100A1677D /* FMLoginViewController.xib in Resources */,
 				786A8B92218A992C00A1677D /* MineCell.xib in Resources */,
 				78ED2E8A2189A56C00ADEC10 /* Assets.xcassets in Resources */,
@@ -786,29 +956,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C58F4C6218D253900AE569F /* UserInfoModel.swift in Sources */,
+				783156A3218FD67D00D0D890 /* UserInfoModel.swift in Sources */,
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
+				783156C42190336A00D0D890 /* FMCollectionView.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
 				7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */,
+				783156C62190339600D0D890 /* FMCircleViewCell.swift in Sources */,
+				783156C22190275A00D0D890 /* FMCircleModel.swift in Sources */,
 				786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */,
 				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
 				7830165A218BE42B005C148F /* MineModel.swift in Sources */,
 				78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */,
+				783156CE21904AE000D0D890 /* FMIntereDubModel.swift in Sources */,
+				783156C0219025CF00D0D890 /* FMFollowController.swift in Sources */,
 				78301662218C276A005C148F /* DiscoverModel.swift in Sources */,
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
 				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
 				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
 				78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */,
 				7830165C218C0801005C148F /* UIBarButtonItem+Extension.swift in Sources */,
+				783156BC2190259E00D0D890 /* FMIntereDubController.swift in Sources */,
+				783156C8219037B300D0D890 /* FMCircleCollectionCell.swift in Sources */,
 				78ED2E982189A68400ADEC10 /* ListenViewController.swift in Sources */,
+				783156BE219025B900D0D890 /* FMCircleController.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
 				78ED2E9C2189A6A700ADEC10 /* PlayViewController.swift in Sources */,
 				78ED2E922189A62500ADEC10 /* BaseCell.swift in Sources */,
 				78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */,
+				783156CB21904A6500D0D890 /* FMInterestDubCell.swift in Sources */,
 				786A8B91218A992C00A1677D /* MineCell.swift in Sources */,
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
 				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,
 				78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */,
+				783156BA2190258000D0D890 /* FMRecommendController.swift in Sources */,
 				78301665218C2A24005C148F /* DiscoverViewModel.swift in Sources */,
 				7817E378218C4E2800385D70 /* UIColor+Extension.swift in Sources */,
 				78301660218C274D005C148F /* DiscoverHeaderView.swift in Sources */,

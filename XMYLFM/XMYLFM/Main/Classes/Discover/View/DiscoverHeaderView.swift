@@ -28,8 +28,6 @@ class DiscoverHeaderView: UIView {
         collectionView.backgroundColor = UIColor.white
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(DiscoverHeaderCell.self, forCellWithReuseIdentifier: "DiscoverHeaderCellID")
-        collectionView.dataSource = self
-        collectionView.delegate = self
         return collectionView
     }()
     

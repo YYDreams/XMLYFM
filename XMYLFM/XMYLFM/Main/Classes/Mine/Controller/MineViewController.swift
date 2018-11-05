@@ -9,7 +9,7 @@
 import UIKit
 
 private let MineCellID = "MineCellID"
-//
+
 class MineViewController: BaseTableViewController {
     //MARK: -  Lazy Methods
     private lazy var model: MineModel = MineModel()
@@ -27,25 +27,39 @@ class MineViewController: BaseTableViewController {
     }()
     
     
-//MARK:
+
+//MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem.title = UserInfoModel.isLoginStatus() ? "账户" : "未登录"
+
            setupNav()
         
           setupTableView()
         
         loadDataFormNetwork()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+        addNotification()
 
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-   
 }
+
+//MARK: addNotification Method
+
+extension MineViewController{
+    
+    private func addNotification(){
+        
+                NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+    }
+  
+}
+
 
 //MARK: setupUI Methods
 extension MineViewController{
@@ -74,12 +88,19 @@ extension MineViewController{
     
     @objc private func loginSuccess(){
         
-        print("token:___________________\(UserInfoModel.userInfo()?.token! ?? "")")
+        
+        print("token:\(String(describing:UserInfoModel.loadAccount()?.token))")
+        
+        print("isLoginStatus:-----\(UserInfoModel.isLoginStatus())")
         loadDataFormNetwork()
         
         
         
+        self.tabBarItem.title = "账户"
+        
+        
     }
+    
     @objc private func messageOnClick(){
         
         print("messageOnClick")
@@ -89,6 +110,7 @@ extension MineViewController{
         
         print("settingOnClick")
 
+        UserInfoModel.clearAccount()
         
     }
     

@@ -24,10 +24,10 @@ class DiscoverViewController: BaseTableViewController {
     }()
     
     private lazy var viewControllers: [UIViewController] = {
-        let oneVc = UIViewController()
-        let twoVc = UIViewController()
-        let threeVc = UIViewController()
-        let thrVc = UIViewController()
+        let oneVc = FMFollowController()
+        let twoVc = FMRecommendController()
+        let threeVc = FMCircleController()
+        let thrVc = FMIntereDubController()
         return [oneVc, twoVc, threeVc,thrVc]
     }()
     
@@ -43,9 +43,12 @@ class DiscoverViewController: BaseTableViewController {
         layout.isAverage = true
         layout.sliderWidth = 80
         layout.titleViewBgColor = UIColor.white
-        layout.titleColor = UIColor.black
-        layout.titleSelectColor = UIColor.withHex(hexString: "<#T##String#>")
+        layout.titleColor = UIColor(r: 178, g: 178, b: 178)
+        layout.titleSelectColor = UIColor(r: 16, g: 16, b: 16)
+
         layout.bottomLineColor = UIColor.red
+        layout.sliderHeight = 50
+
         layout.titleFont = UIFont.systemFont(ofSize: 15)
         return layout
     }()

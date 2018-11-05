@@ -26,8 +26,14 @@ let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
 
 /***************************** color *******************************/
 
+//背景色
 let bgColor =  UIColor.withHex(hexString: "F2F2F2")
 
+//文字   浅灰色  如提示、正文
+let k6Color = UIColor.withHex(hexString: "666666")
+
+
+let k9Color = UIColor.withHex(hexString: "999999")
 
 /***************************** Notification *******************************/
 

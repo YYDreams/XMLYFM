@@ -43,8 +43,8 @@ class DiscoverViewController: BaseTableViewController {
         layout.isAverage = true
         layout.sliderWidth = 80
         layout.titleViewBgColor = UIColor.white
-        layout.titleColor = UIColor(r: 178, g: 178, b: 178)
-        layout.titleSelectColor = UIColor(r: 16, g: 16, b: 16)
+        layout.titleColor = UIColor.black
+        layout.titleSelectColor = UIColor.withHex(hexString: "<#T##String#>")
         layout.bottomLineColor = UIColor.red
         layout.titleFont = UIFont.systemFont(ofSize: 15)
         return layout

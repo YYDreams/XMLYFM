@@ -24,31 +24,30 @@ class FMLoginViewController: UIViewController {
     @IBAction func loginBtnOnClick(_ sender: UIButton) {
         
 
-        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_6, urlString: kPassportTokenLogin, parameters: [:]) { (result, error) in
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_MOCKY, urlString: kLoginUrl, parameters: [:]) { (result, error) in
 
-            print("result\(result) error\(result)")
-//
-//            if let dic = result as? [String: AnyObject]{
-//
-//                let ret = dic["ret"] as? Int
-//
-//                if ret == 0 {
-//
-//
+            
+            guard  let resultDic  = result as? [String : AnyObject] else{
+                
+                return
+            }
+
+            let infoModel:UserInfoModel = UserInfoModel.deserialize(from: resultDic)!
+
+            
+            if infoModel.ret == 0 {
+                infoModel.saveAccount()
+                    
                     NotificationCenter.default.post(name: NSNotification.Name(kLoginSuccessNotification), object: nil)
-
+                    
                     self.dismiss(animated: true, completion: nil)
-//                }
-//
-//            }
+
+            }
 
         }
 
         
     }
-    
-    
-    
- 
 
 }
+

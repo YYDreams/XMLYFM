@@ -87,6 +87,8 @@ class MineCell: BaseCell {
   
     @IBAction func isLoginBtnOnClick(_ sender: UIButton) {
         
+        print("---------------------------")
+        sender.isUserInteractionEnabled = !LoginHelper.isLoginStatus()
         
         if !LoginHelper.isLoginStatus() {
             

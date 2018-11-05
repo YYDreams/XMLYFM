@@ -18,7 +18,6 @@ class BaseTableViewController: UITableViewController {
        self.view.backgroundColor = bgColor
         
         
-        
 
     }
 

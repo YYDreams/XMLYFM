@@ -145,7 +145,7 @@ extension FMPhotoBrowserController:UICollectionViewDelegate,UICollectionViewData
      
         cell.itemCallBack = { () -> Void in
 
-            closeBtnOnClick()
+           self.closeBtnOnClick()
             
             
         }

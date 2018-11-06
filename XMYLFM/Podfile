@@ -10,6 +10,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'MJRefresh'
 pod 'SnapKit', '~> 4.0.0'
+pod 'DZNEmptyDataSet'
 
 pod 'HandyJSON', '~> 4.1.3 '
 pod 'FLAnimatedImage'

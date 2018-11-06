@@ -27,7 +27,7 @@ class FMIntereDubController: UIViewController,LTTableViewProtocal {
         
         setupTableView()
 
-   loadDataFormNetwork()
+      loadDataFormNetwork()
         
    }
 
@@ -79,8 +79,7 @@ extension FMIntereDubController{
     private func setupTableView(){
         
         self.view.addSubview(tableView)
-//        tableView.rowHeight = UITableViewAutomaticDimension  // 根据约束自动计算  如果需要手动计算 则需要去掉
-//        tableView.estimatedRowHeight = 248
+
         glt_scrollView = tableView
 
         
@@ -107,10 +106,7 @@ extension FMIntereDubController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         return dataArr[indexPath.row].cellHeight
-
-
     }
-    
 }
 
 

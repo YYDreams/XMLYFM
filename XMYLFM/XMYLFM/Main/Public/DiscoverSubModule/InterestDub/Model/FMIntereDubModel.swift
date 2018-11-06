@@ -10,6 +10,16 @@ import UIKit
 
 class FMIntereDubModel: BaseModel {
 
+    var feedItem: FMFeedItemModel?
+
+    var dubbingItem: FMDubbingItemModel?
+    
+    var cellHeight: CGFloat = 0
+
+}
+
+
+class FMDubbingItemModel: BaseModel {
     
     var playTimes: Int = 0  //X次播放  播放次数
     
@@ -31,21 +41,14 @@ class FMIntereDubModel: BaseModel {
     var coverMiddle: String? //中图
     
     var coverSmall: String? //小图
- 
-    var feedItem: FeedItemModel?
-
     
     var playPathAacv164: String?
     
     var playPathAacv224: String?
-    
-  
-    
-    
- 
+
 }
 
-class FeedItemModel: BaseModel {
+class FMFeedItemModel: BaseModel {
     
     
     var recReason: String? //新品

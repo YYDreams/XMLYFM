@@ -34,6 +34,8 @@ let kPointQueryUrl = "/v2/5bdbab503200004e3c3ad5d3"
 //顶部
 let kDiscoveryTabsUrl = "/discovery-stream-mobile/discoveryPage/wholeContent/tabs/ts-1541140247973"
 
+//推荐
+let kDiscoverRecommendUrl = "/v2/5be12f863000003600d9a831"
 
 //可能感兴趣的圈子
 let kDiscoveryCommunityUrl = "/community/v1/communities/recommendations?pageSize=20"
@@ -49,6 +51,16 @@ let kLoginUrl = "/v2/5bdce8df33000066298136b8"
 
 //退出登录
 let kLogoutUrl = "/v2/5bdfa9a8310000891b9e406d"
+
+
+
+
+
+
+
+
+
+
 
 /********************************************************/
 

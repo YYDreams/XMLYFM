@@ -12,14 +12,13 @@ import LTScrollView
 class FMIntereDubController: UIViewController,LTTableViewProtocal {
     
     private lazy var dataArr: [FMIntereDubModel] = [FMIntereDubModel]()
+    private var cellHeight: CGFloat = 0.0
     //MARK:Lazy Method
     private lazy var tableView: UITableView = {
         let tableView = tableViewConfig(self, self, .plain)
         tableView.frame = CGRect(x: 0, y: 0, width: screenW, height: screenH-50-navHeight)
         tableView.register(UINib(nibName: "FMInterestDubCell", bundle: nil), forCellReuseIdentifier: "FMInterestDubCellID")
-        tableView.rowHeight = 240
 
-        
         return tableView
     }()
     override func viewDidLoad() {
@@ -41,34 +40,32 @@ extension FMIntereDubController{
     private func loadDataFormNetwork(){
         
       
-        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kDiscoverIntereDubUrl, parameters: [:]) { (result, error) in
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_MOCKY, urlString: kDiscoverIntereDubUrl, parameters: [:]) { (result, error) in
             
             if error != nil {
                 return
             }
             
-            guard  let resultDic  = result as? [String : AnyObject] else{
+            
+            guard let resultDic = result as? [String : AnyObject] else {return}
+            
+            
+            guard   let  resultData = resultDic["data"] as? [[String : AnyObject]] else {
+                
                 return
             }
-            
-//            let dataDic = resultDic["data"] as? [[String: AnyObject]]
-            
-
-            
-            guard let resultArr =  resultDic["data"]!["dubbingItem"] as? [[String: AnyObject]] else{
-                return
-            }
-
-//            guard let  dubbingItem = dataDic!["dubbingItem"] else{ return}
-            for dubbingModel in resultArr {
+ 
+    
+            for  dataDic in resultData {
                 
-                let model: FMIntereDubModel = FMIntereDubModel.deserialize(from: dubbingModel)!
                 
-                self.dataArr.append(model)
+                let dubModel: FMIntereDubModel = FMIntereDubModel.deserialize(from: dataDic)!
+                self.dataArr.append(dubModel)
+                
+                
                 
             }
-            
-
+    
             self.tableView.reloadData()
         }
     }
@@ -82,7 +79,8 @@ extension FMIntereDubController{
     private func setupTableView(){
         
         self.view.addSubview(tableView)
-        
+//        tableView.rowHeight = UITableViewAutomaticDimension  // 根据约束自动计算  如果需要手动计算 则需要去掉
+//        tableView.estimatedRowHeight = 248
         glt_scrollView = tableView
 
         
@@ -97,13 +95,21 @@ extension FMIntereDubController: UITableViewDelegate, UITableViewDataSource{
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //FIXME: 注意初始化 注释地方打开会发现高度重叠了
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "FMInterestDubCellID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FMInterestDubCellID")  as! FMInterestDubCell
+
+        cell.model = dataArr[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FMInterestDubCellID", for: indexPath)  as! FMInterestDubCell
-        cell.model = self.dataArr[indexPath.row]
         return cell
     }
     
-        
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        return dataArr[indexPath.row].cellHeight
+
+
+    }
     
 }
 

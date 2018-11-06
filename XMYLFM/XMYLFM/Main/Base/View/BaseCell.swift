@@ -12,7 +12,7 @@ class BaseCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
+      selectionStyle = .none
 
     }
 

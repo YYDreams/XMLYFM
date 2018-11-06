@@ -35,9 +35,31 @@ let k6Color = UIColor.withHex(hexString: "666666")
 
 let k9Color = UIColor.withHex(hexString: "999999")
 
+
+/***************************** Key *******************************/
+
+
+//Recommend Photo Index Key
+let kRecommendShowPhotoBrowserIndexKey  = "kRecommendShowPhotoBrowserIndexKey"
+
+//Recommend Photo Url Key
+let kRecommendShowPhotoBrowserUrlKey  = "kRecommendShowPhotoBrowserUrlKey"
+
+
+
+
 /***************************** Notification *******************************/
 
 //login Success
 let kLoginSuccessNotification  = "kLoginSuccessNotification"
+
+// Recommend didSelectItemAt
+let kRecommendPhotoSelectItemNotification  = "kRecommendPhotoSelectItemNotification"
+
+
+
+
+
+
 
 

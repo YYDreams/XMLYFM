@@ -29,6 +29,14 @@
 		783156CB21904A6500D0D890 /* FMInterestDubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156C921904A6500D0D890 /* FMInterestDubCell.swift */; };
 		783156CC21904A6500D0D890 /* FMInterestDubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783156CA21904A6500D0D890 /* FMInterestDubCell.xib */; };
 		783156CE21904AE000D0D890 /* FMIntereDubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783156CD21904AE000D0D890 /* FMIntereDubModel.swift */; };
+		785377772191689800D82E57 /* FMRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785377762191689800D82E57 /* FMRecommendModel.swift */; };
+		7853777A2191718100D82E57 /* FMRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785377782191718100D82E57 /* FMRecommendCell.swift */; };
+		7853777B2191718100D82E57 /* FMRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785377792191718100D82E57 /* FMRecommendCell.xib */; };
+		7853777D2191756F00D82E57 /* FMPicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7853777C2191756F00D82E57 /* FMPicCollectionView.swift */; };
+		78537783219191E800D82E57 /* FMPicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78537782219191E800D82E57 /* FMPicCollectionViewCell.swift */; };
+		785377852191973300D82E57 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785377842191973300D82E57 /* NSDate+Extension.swift */; };
+		785377882191A27A00D82E57 /* FMPhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785377872191A27A00D82E57 /* FMPhotoBrowserController.swift */; };
+		7853778A2191A38600D82E57 /* FMPhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785377892191A38600D82E57 /* FMPhotoBrowserCell.swift */; };
 		786A8B91218A992C00A1677D /* MineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B8F218A992C00A1677D /* MineCell.swift */; };
 		786A8B92218A992C00A1677D /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8B90218A992C00A1677D /* MineCell.xib */; };
 		786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8B93218AAB5100A1677D /* NetworkTool.swift */; };
@@ -97,6 +105,14 @@
 		783156C921904A6500D0D890 /* FMInterestDubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMInterestDubCell.swift; sourceTree = "<group>"; };
 		783156CA21904A6500D0D890 /* FMInterestDubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMInterestDubCell.xib; sourceTree = "<group>"; };
 		783156CD21904AE000D0D890 /* FMIntereDubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMIntereDubModel.swift; sourceTree = "<group>"; };
+		785377762191689800D82E57 /* FMRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRecommendModel.swift; sourceTree = "<group>"; };
+		785377782191718100D82E57 /* FMRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMRecommendCell.swift; sourceTree = "<group>"; };
+		785377792191718100D82E57 /* FMRecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FMRecommendCell.xib; sourceTree = "<group>"; };
+		7853777C2191756F00D82E57 /* FMPicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPicCollectionView.swift; sourceTree = "<group>"; };
+		78537782219191E800D82E57 /* FMPicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPicCollectionViewCell.swift; sourceTree = "<group>"; };
+		785377842191973300D82E57 /* NSDate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		785377872191A27A00D82E57 /* FMPhotoBrowserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPhotoBrowserController.swift; sourceTree = "<group>"; };
+		785377892191A38600D82E57 /* FMPhotoBrowserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPhotoBrowserCell.swift; sourceTree = "<group>"; };
 		786A8B8F218A992C00A1677D /* MineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MineCell.swift; sourceTree = "<group>"; };
 		786A8B90218A992C00A1677D /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
 		786A8B93218AAB5100A1677D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
@@ -184,6 +200,7 @@
 		783156A42190248E00D0D890 /* DiscoverSubModule */ = {
 			isa = PBXGroup;
 			children = (
+				785377862191A26100D82E57 /* PhotoBrowser */,
 				783156A92190248E00D0D890 /* Follow */,
 				783156B12190248E00D0D890 /* Recommend */,
 				783156A52190248E00D0D890 /* Circle */,
@@ -315,6 +332,7 @@
 		783156B32190248E00D0D890 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				785377762191689800D82E57 /* FMRecommendModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,8 +340,21 @@
 		783156B42190248E00D0D890 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				785377782191718100D82E57 /* FMRecommendCell.swift */,
+				785377792191718100D82E57 /* FMRecommendCell.xib */,
+				7853777C2191756F00D82E57 /* FMPicCollectionView.swift */,
+				78537782219191E800D82E57 /* FMPicCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		785377862191A26100D82E57 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				785377872191A27A00D82E57 /* FMPhotoBrowserController.swift */,
+				785377892191A38600D82E57 /* FMPhotoBrowserCell.swift */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		786A8B9E218AD77100A1677D /* Login */ = {
@@ -421,6 +452,7 @@
 				7830165B218C0801005C148F /* UIBarButtonItem+Extension.swift */,
 				7817E377218C4E2800385D70 /* UIColor+Extension.swift */,
 				783156C32190336A00D0D890 /* FMCollectionView.swift */,
+				785377842191973300D82E57 /* NSDate+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -841,6 +873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78ED2E882189A56C00ADEC10 /* LaunchScreen.storyboard in Resources */,
+				7853777B2191718100D82E57 /* FMRecommendCell.xib in Resources */,
 				783156CC21904A6500D0D890 /* FMInterestDubCell.xib in Resources */,
 				786A8BA5218AD77100A1677D /* FMLoginViewController.xib in Resources */,
 				786A8B92218A992C00A1677D /* MineCell.xib in Resources */,
@@ -957,12 +990,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				783156A3218FD67D00D0D890 /* UserInfoModel.swift in Sources */,
+				785377772191689800D82E57 /* FMRecommendModel.swift in Sources */,
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
 				783156C42190336A00D0D890 /* FMCollectionView.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
 				7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */,
+				785377852191973300D82E57 /* NSDate+Extension.swift in Sources */,
 				783156C62190339600D0D890 /* FMCircleViewCell.swift in Sources */,
 				783156C22190275A00D0D890 /* FMCircleModel.swift in Sources */,
+				7853777A2191718100D82E57 /* FMRecommendCell.swift in Sources */,
 				786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */,
 				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
 				7830165A218BE42B005C148F /* MineModel.swift in Sources */,
@@ -973,7 +1009,9 @@
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
 				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
 				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
+				7853778A2191A38600D82E57 /* FMPhotoBrowserCell.swift in Sources */,
 				78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */,
+				785377882191A27A00D82E57 /* FMPhotoBrowserController.swift in Sources */,
 				7830165C218C0801005C148F /* UIBarButtonItem+Extension.swift in Sources */,
 				783156BC2190259E00D0D890 /* FMIntereDubController.swift in Sources */,
 				783156C8219037B300D0D890 /* FMCircleCollectionCell.swift in Sources */,
@@ -988,11 +1026,13 @@
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
 				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,
 				78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */,
+				7853777D2191756F00D82E57 /* FMPicCollectionView.swift in Sources */,
 				783156BA2190258000D0D890 /* FMRecommendController.swift in Sources */,
 				78301665218C2A24005C148F /* DiscoverViewModel.swift in Sources */,
 				7817E378218C4E2800385D70 /* UIColor+Extension.swift in Sources */,
 				78301660218C274D005C148F /* DiscoverHeaderView.swift in Sources */,
 				78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */,
+				78537783219191E800D82E57 /* FMPicCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

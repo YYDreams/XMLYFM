@@ -100,7 +100,7 @@ class MineCell: BaseCell {
             subTitleLabel.layer.masksToBounds = true
             subTitleLabel.layer.cornerRadius = 8
             subTitleLabel.layer.borderWidth = 1.0;
-            subTitleLabel.layer.borderColor = bgColor.cgColor
+            subTitleLabel.layer.borderColor = kBgColor.cgColor
             
             userTitleLabel.layer.masksToBounds = true
             userTitleLabel.layer.cornerRadius = 5

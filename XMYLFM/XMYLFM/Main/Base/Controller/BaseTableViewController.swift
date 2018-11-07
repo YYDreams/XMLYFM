@@ -15,7 +15,7 @@ class BaseTableViewController: UITableViewController {
 
         tableView.tableFooterView = UIView()
 
-       self.view.backgroundColor = bgColor
+       self.view.backgroundColor = kBgColor
         
         
 

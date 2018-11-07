@@ -23,12 +23,19 @@ let MAIN_URL_MOCKY = "http://www.mocky.io"
 let MAIN_URL_M_XMLY = "http://m.ximalaya.com"
 
 
-/****************我的******************/
-//个人信息
-let kMobileUrl = "/v2/5bdbab503200004e3c3ad5d3"
-//积分查询
-let kPointQueryUrl = "/v2/5bdbab503200004e3c3ad5d3"
-//
+/****************我听******************/
+//订阅
+//let kDiscoveryTabsUrl = "/discovery-stream-mobile/discoveryPage/wholeContent/tabs/ts-1541140247973"
+
+//一键听
+let kOnetListenUrl = "/radio-station/v1/subscribe-channel/list?pageId=1"
+//http://mobile.ximalaya.com/radio-station/v1/subscribe-channel/list?pageId=1
+//推荐
+let kListenSubscribeUrl = "/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=1&pageSize=30"
+//http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=1&pageSize=30
+//http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=2&pageSize=30
+
+
 /****************发现******************/
 
 //顶部
@@ -44,6 +51,14 @@ let kDiscoveryCommunityUrl = "/community/v1/communities/recommendations?pageSize
 
 //趣配音
 let kDiscoverIntereDubUrl = "/v2/5be0511732000063006495c9"
+
+/****************我的******************/
+//个人信息
+let kMobileUrl = "/v2/5bdbab503200004e3c3ad5d3"
+//积分查询
+let kPointQueryUrl = "/v2/5bdbab503200004e3c3ad5d3"
+//
+
 
 
 /****************登录******************/

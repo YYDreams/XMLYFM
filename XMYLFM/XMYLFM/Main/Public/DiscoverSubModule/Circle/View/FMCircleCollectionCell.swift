@@ -118,7 +118,7 @@ class FMCircleCollectionCell: UICollectionViewCell {
         contenView.layer.masksToBounds = true
         contenView.layer.cornerRadius = 8
         contenView.layer.borderWidth = 1.0;
-        contenView.layer.borderColor = bgColor.cgColor
+        contenView.layer.borderColor = kBgColor.cgColor
         
         
         imageView.layer.masksToBounds = true

@@ -36,7 +36,9 @@ extension BaseTabBarViewController{
             [HomeViewController(),ListenViewController(),PlayViewController(),DiscoverViewController(),MineViewController()]
         let normalImageNames = ["home","find","","favor","me"]
         let selectImageNames = ["home_1","find_1","","favor_1","me_1"]
-        let titles = ["首页","我听","","发现","我的"]
+        
+        let mineTitle = !UserInfoModel.isLoginStatus() ? "未登录" : "账户"
+        let titles = ["首页","我听","","发现",mineTitle]
         
         for (index, vc) in controllers.enumerated() {
             
@@ -44,10 +46,10 @@ extension BaseTabBarViewController{
             vc.tabBarItem.image = UIImage(named: normalImageNames[index])
             vc.tabBarItem.selectedImage = UIImage(named: selectImageNames[index])
             //设置选中图标的颜色
-            UITabBar.appearance().tintColor = UIColor.red
+            UITabBar.appearance().tintColor = kThemeColor
             addChildViewController( BaseNavViewController(rootViewController: vc))
             
-            self.selectedIndex = 3
+            self.selectedIndex = 1
         }
         
     }
@@ -55,7 +57,7 @@ extension BaseTabBarViewController{
         
         let tabBar = UITabBarItem.appearance()
         let attrs_Normal = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor.gray]
-        let attrs_Select = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor.red]
+        let attrs_Select = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: kThemeColor]
 
         tabBar.setTitleTextAttributes(attrs_Normal, for: .normal)
         tabBar.setTitleTextAttributes(attrs_Select, for: .selected)

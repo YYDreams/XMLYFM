@@ -63,19 +63,18 @@ class FMRecommendCell: UITableViewCell {
             
             contentLabel.text = viewModel.recommendModel?.content
             
-            let picViewSize  = calculatePicViewSize(count: viewModel.picUrls.count)
-            
-            collectionView.picUrls = viewModel.picUrls
-
-            
-            
             timeLabel.text = viewModel.createTime
             
             likesCountLabel.text =  "\(viewModel.recommendModel?.likesCount ?? 0 )"
             
             commentsCountLabel.text =  "\(viewModel.recommendModel?.commentsCount ?? 0 )"
-
+            
+            collectionView.picUrls = viewModel.picUrls
+            
+            let picViewSize  = calculatePicViewSize(count: viewModel.picUrls.count)
+            
             collectionViewHeightConst.constant = picViewSize.height
+            
             collectionViewWidthConst.constant = picViewSize.width
             
             print(picViewSize)
@@ -88,9 +87,7 @@ class FMRecommendCell: UITableViewCell {
                 print(viewModel.cellHeight)
                 
             }
-
         }
-        
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -106,8 +103,19 @@ extension FMRecommendCell{
     
     private func calculatePicViewSize(count:Int) -> CGSize {
         
+        /**
+         注意约束冲突 当count == 0  距离正文10  距离bottomView 10
+         解决措施 修改collectionView的优先级Priority 700
+         则会选用优先级高的约束  优先级低的约束则不会生效
+         */
+        /**
+         图片显示分几种情况:
+         1.没有配图
+         2.4张配图
+         3.其他张配图 (count -1)/3 + 1  = rows
+         */
         
-        
+        //1.没有配图
         if count == 0 {
             collectionViewBottomConst.constant = 0
             
@@ -121,10 +129,10 @@ extension FMRecommendCell{
         
 
         //图片的WH
-        let imageViewWH = (screenW - 2 * magin - 2 * iteMagin)/3
+        let imageViewWH = (screenW - 2 * magin - 2 * iteMagin) / 3
         
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
-        //3.4张配图
+        //2. 4张配图
         if  count == 4 {
             
             let picViewWH = imageViewWH * 2 +  iteMagin + 1  //+1微调
@@ -132,9 +140,9 @@ extension FMRecommendCell{
             return CGSize(width: picViewWH, height: picViewWH)
         }
         
-        // 4.其他张配图 (count -1)/3 + 1  = rows
+        // 3.其他张配图 (count -1)/3 + 1  = rows
         /**
-         例子:  5张配图  2行   row:(5-1)/3+1 = 2  H: 2 *
+         例子:  5张配图  2行   row:(5-1)/3+1 = 2
          */
         // 4.1 计算行数
         let rows = CGFloat( (count - 1 )/3 + 1)

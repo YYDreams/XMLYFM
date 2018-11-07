@@ -29,9 +29,7 @@ class ListenViewController: BaseTableViewController {
         return [oneVc, twoVc, threeVc]
     }()
     
-    
-    //http://180.153.255.6/nexus/v1/tabs/1541140247976?osType=ios&version=6.5.24
-    private lazy var titles: [String] = {
+        private lazy var titles: [String] = {
         
         return ["订阅","一键听", "推荐"]
     }()
@@ -46,7 +44,7 @@ class ListenViewController: BaseTableViewController {
         
         layout.bottomLineColor = UIColor.red
         layout.sliderHeight = 50
-        
+        layout.isHovered = false
         layout.titleFont = UIFont.systemFont(ofSize: 15)
         return layout
     }()

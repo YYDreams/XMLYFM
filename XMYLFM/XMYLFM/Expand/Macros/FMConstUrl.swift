@@ -31,7 +31,7 @@ let MAIN_URL_M_XMLY = "http://m.ximalaya.com"
 let kOnetListenUrl = "/radio-station/v1/subscribe-channel/list?pageId=1"
 //http://mobile.ximalaya.com/radio-station/v1/subscribe-channel/list?pageId=1
 //推荐
-let kListenSubscribeUrl = "/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=1&pageSize=30"
+let kListenSubscribeUrl = "/subscribe/v2/subscribe/recommend/unlogin"
 //http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=1&pageSize=30
 //http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=2&pageSize=30
 

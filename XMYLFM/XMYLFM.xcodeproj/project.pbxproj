@@ -45,6 +45,7 @@
 		786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8BA0218AD77100A1677D /* FMLoginViewController.swift */; };
 		786A8BA5218AD77100A1677D /* FMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786A8BA1218AD77100A1677D /* FMLoginViewController.xib */; };
 		786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786A8BA6218AD77E00A1677D /* LoginHelper.swift */; };
+		7879E5862193D8C3007B25C6 /* HHRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879E5852193D8C3007B25C6 /* HHRefreshGifHeader.swift */; };
 		78C26FBD2192CFE0000126EA /* ListenHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FBC2192CFE0000126EA /* ListenHeaderView.swift */; };
 		78C26FCC2192D0CE000126EA /* FMOneListenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FCB2192D0CE000126EA /* FMOneListenController.swift */; };
 		78C26FD02192D0EE000126EA /* FMListenRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FCF2192D0EE000126EA /* FMListenRecommendController.swift */; };
@@ -53,8 +54,11 @@
 		78C26FD62192E7C1000126EA /* FMOneListenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FD52192E7C1000126EA /* FMOneListenModel.swift */; };
 		78C26FD82192E7DA000126EA /* FMListRecommedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FD72192E7DA000126EA /* FMListRecommedModel.swift */; };
 		78C26FDA2192E80A000126EA /* FMSubscribeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FD92192E80A000126EA /* FMSubscribeModel.swift */; };
-		78C26FDC2192E84A000126EA /* FMSubcribeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FDB2192E84A000126EA /* FMSubcribeCell.swift */; };
 		78C26FDE2192F51C000126EA /* FMListenRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C26FDD2192F51C000126EA /* FMListenRecommendCell.swift */; };
+		78D0CA052193E5A5008B85EE /* FMListenChannelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0CA042193E5A5008B85EE /* FMListenChannelController.swift */; };
+		78D0CA1A219419E1008B85EE /* FMHomeRecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0CA19219419E1008B85EE /* FMHomeRecommendController.swift */; };
+		78D0CA1C219419F7008B85EE /* FMVipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0CA1B219419F7008B85EE /* FMVipController.swift */; };
+		78D0CA1E21941A0F008B85EE /* FMNovelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D0CA1D21941A0F008B85EE /* FMNovelController.swift */; };
 		78ED2E4621899FF200ADEC10 /* XMYLFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E4521899FF200ADEC10 /* XMYLFMTests.swift */; };
 		78ED2E5121899FF200ADEC10 /* XMYLFMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E5021899FF200ADEC10 /* XMYLFMUITests.swift */; };
 		78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E642189A56B00ADEC10 /* AppDelegate.swift */; };
@@ -131,6 +135,7 @@
 		786A8BA0218AD77100A1677D /* FMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMLoginViewController.swift; sourceTree = "<group>"; };
 		786A8BA1218AD77100A1677D /* FMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FMLoginViewController.xib; sourceTree = "<group>"; };
 		786A8BA6218AD77E00A1677D /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
+		7879E5852193D8C3007B25C6 /* HHRefreshGifHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHRefreshGifHeader.swift; sourceTree = "<group>"; };
 		78C26FBC2192CFE0000126EA /* ListenHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenHeaderView.swift; sourceTree = "<group>"; };
 		78C26FCB2192D0CE000126EA /* FMOneListenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOneListenController.swift; sourceTree = "<group>"; };
 		78C26FCF2192D0EE000126EA /* FMListenRecommendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMListenRecommendController.swift; sourceTree = "<group>"; };
@@ -139,8 +144,11 @@
 		78C26FD52192E7C1000126EA /* FMOneListenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMOneListenModel.swift; sourceTree = "<group>"; };
 		78C26FD72192E7DA000126EA /* FMListRecommedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMListRecommedModel.swift; sourceTree = "<group>"; };
 		78C26FD92192E80A000126EA /* FMSubscribeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSubscribeModel.swift; sourceTree = "<group>"; };
-		78C26FDB2192E84A000126EA /* FMSubcribeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSubcribeCell.swift; sourceTree = "<group>"; };
 		78C26FDD2192F51C000126EA /* FMListenRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMListenRecommendCell.swift; sourceTree = "<group>"; };
+		78D0CA042193E5A5008B85EE /* FMListenChannelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMListenChannelController.swift; sourceTree = "<group>"; };
+		78D0CA19219419E1008B85EE /* FMHomeRecommendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeRecommendController.swift; sourceTree = "<group>"; };
+		78D0CA1B219419F7008B85EE /* FMVipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMVipController.swift; sourceTree = "<group>"; };
+		78D0CA1D21941A0F008B85EE /* FMNovelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMNovelController.swift; sourceTree = "<group>"; };
 		78ED2E2D21899FF000ADEC10 /* XMYLFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMYLFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78ED2E3C21899FF200ADEC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78ED2E4121899FF200ADEC10 /* XMYLFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMYLFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -404,12 +412,29 @@
 			path = LoginHelper;
 			sourceTree = "<group>";
 		};
+		7879E5832193D86A007B25C6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				7879E5842193D86A007B25C6 /* Refresh */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		7879E5842193D86A007B25C6 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				7879E5852193D8C3007B25C6 /* HHRefreshGifHeader.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		78C26FBE2192D0B9000126EA /* ListenSubModule */ = {
 			isa = PBXGroup;
 			children = (
-				78C26FBF2192D0B9000126EA /* OnetListen */,
-				78C26FC32192D0B9000126EA /* Recommend */,
 				78C26FC72192D0B9000126EA /* Subscribe */,
+				78C26FC32192D0B9000126EA /* Recommend */,
+				78C26FBF2192D0B9000126EA /* OnetListen */,
+				78D0CA002193E55A008B85EE /* Channel */,
 			);
 			path = ListenSubModule;
 			sourceTree = "<group>";
@@ -487,7 +512,6 @@
 			children = (
 				78C26FC82192D0B9000126EA /* Controller */,
 				78C26FC92192D0B9000126EA /* Model */,
-				78C26FCA2192D0B9000126EA /* View */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -508,10 +532,140 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		78C26FCA2192D0B9000126EA /* View */ = {
+		78D0CA002193E55A008B85EE /* Channel */ = {
 			isa = PBXGroup;
 			children = (
-				78C26FDB2192E84A000126EA /* FMSubcribeCell.swift */,
+				78D0CA012193E55A008B85EE /* Controller */,
+				78D0CA022193E55A008B85EE /* Model */,
+				78D0CA032193E55A008B85EE /* View */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		78D0CA012193E55A008B85EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA042193E5A5008B85EE /* FMListenChannelController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78D0CA022193E55A008B85EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78D0CA032193E55A008B85EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78D0CA0A2194199B008B85EE /* HomeSubModule */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA0F2194199B008B85EE /* Recommend */,
+				78D0CA132194199B008B85EE /* VIP */,
+				78D0CA0B2194199B008B85EE /* Novel */,
+			);
+			path = HomeSubModule;
+			sourceTree = "<group>";
+		};
+		78D0CA0B2194199B008B85EE /* Novel */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA0C2194199B008B85EE /* Controller */,
+				78D0CA0D2194199B008B85EE /* Model */,
+				78D0CA0E2194199B008B85EE /* View */,
+			);
+			path = Novel;
+			sourceTree = "<group>";
+		};
+		78D0CA0C2194199B008B85EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA1D21941A0F008B85EE /* FMNovelController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78D0CA0D2194199B008B85EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78D0CA0E2194199B008B85EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78D0CA0F2194199B008B85EE /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA102194199B008B85EE /* Controller */,
+				78D0CA112194199B008B85EE /* Model */,
+				78D0CA122194199B008B85EE /* View */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		78D0CA102194199B008B85EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA19219419E1008B85EE /* FMHomeRecommendController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78D0CA112194199B008B85EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78D0CA122194199B008B85EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78D0CA132194199B008B85EE /* VIP */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA142194199B008B85EE /* Controller */,
+				78D0CA152194199B008B85EE /* Model */,
+				78D0CA162194199B008B85EE /* View */,
+			);
+			path = VIP;
+			sourceTree = "<group>";
+		};
+		78D0CA142194199B008B85EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				78D0CA1B219419F7008B85EE /* FMVipController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		78D0CA152194199B008B85EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78D0CA162194199B008B85EE /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -570,9 +724,10 @@
 		78ED2E5E2189A56B00ADEC10 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				78ED2E5F2189A56B00ADEC10 /* Category */,
-				78ED2E602189A56B00ADEC10 /* Macros */,
 				78ED2E612189A56B00ADEC10 /* Network */,
+				78ED2E602189A56B00ADEC10 /* Macros */,
+				78ED2E5F2189A56B00ADEC10 /* Category */,
+				7879E5832193D86A007B25C6 /* Tool */,
 			);
 			path = Expand;
 			sourceTree = "<group>";
@@ -845,6 +1000,7 @@
 		78ED2E7E2189A56B00ADEC10 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				78D0CA0A2194199B008B85EE /* HomeSubModule */,
 				78C26FBE2192D0B9000126EA /* ListenSubModule */,
 				783156A42190248E00D0D890 /* DiscoverSubModule */,
 				786A8B9E218AD77100A1677D /* Login */,
@@ -1140,6 +1296,7 @@
 				78C26FD62192E7C1000126EA /* FMOneListenModel.swift in Sources */,
 				7853777A2191718100D82E57 /* FMRecommendCell.swift in Sources */,
 				786A8BA7218AD77E00A1677D /* LoginHelper.swift in Sources */,
+				78D0CA1A219419E1008B85EE /* FMHomeRecommendController.swift in Sources */,
 				78C26FCC2192D0CE000126EA /* FMOneListenController.swift in Sources */,
 				78C26FDE2192F51C000126EA /* FMListenRecommendCell.swift in Sources */,
 				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
@@ -1152,6 +1309,8 @@
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
 				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
 				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
+				78D0CA1C219419F7008B85EE /* FMVipController.swift in Sources */,
+				7879E5862193D8C3007B25C6 /* HHRefreshGifHeader.swift in Sources */,
 				7853778A2191A38600D82E57 /* FMPhotoBrowserCell.swift in Sources */,
 				78ED2E8C2189A5C900ADEC10 /* BaseUIViewController.swift in Sources */,
 				785377882191A27A00D82E57 /* FMPhotoBrowserController.swift in Sources */,
@@ -1163,6 +1322,7 @@
 				783156BE219025B900D0D890 /* FMCircleController.swift in Sources */,
 				78C26FD42192E7AE000126EA /* FMOneListenCell.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
+				78D0CA1E21941A0F008B85EE /* FMNovelController.swift in Sources */,
 				78ED2E9C2189A6A700ADEC10 /* PlayViewController.swift in Sources */,
 				78ED2E922189A62500ADEC10 /* BaseCell.swift in Sources */,
 				78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */,
@@ -1170,8 +1330,8 @@
 				786A8B91218A992C00A1677D /* MineCell.swift in Sources */,
 				78C26FD02192D0EE000126EA /* FMListenRecommendController.swift in Sources */,
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
+				78D0CA052193E5A5008B85EE /* FMListenChannelController.swift in Sources */,
 				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,
-				78C26FDC2192E84A000126EA /* FMSubcribeCell.swift in Sources */,
 				78C26FDA2192E80A000126EA /* FMSubscribeModel.swift in Sources */,
 				78ED2E8E2189A5E900ADEC10 /* BaseNavViewController.swift in Sources */,
 				7853777D2191756F00D82E57 /* FMPicCollectionView.swift in Sources */,
@@ -1349,7 +1509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTFB24CDL;
 				INFOPLIST_FILE = XMYLFM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1369,7 +1529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWTFB24CDL;
 				INFOPLIST_FILE = XMYLFM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

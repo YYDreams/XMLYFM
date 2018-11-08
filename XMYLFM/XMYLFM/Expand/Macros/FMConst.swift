@@ -33,10 +33,11 @@ let kBgColor =  UIColor.withHex(hexString: "F2F2F2")
 //文字   浅灰色  如提示、正文
 let k6Color = UIColor.withHex(hexString: "666666")
 
-
 let k9Color = UIColor.withHex(hexString: "999999")
 
 
+//按钮的背景颜色
+let kBtnBgColor = UIColor.withHex(hexString: "FFE4E1")
 /***************************** Key *******************************/
 
 

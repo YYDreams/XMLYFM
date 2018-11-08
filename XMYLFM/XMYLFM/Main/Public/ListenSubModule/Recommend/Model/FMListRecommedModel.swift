@@ -16,10 +16,9 @@ class FMListRecommedModel: BaseModel {
     
     var title: String?  //title
     
-    
     var recReason: String? // subTitle
     
-    var playsCounts: Int = 0 // 播放次数
+    var playsCounts: Float = 0 // 播放次数
     
     var tracks: Int = 0  //播放级数
     
@@ -27,9 +26,5 @@ class FMListRecommedModel: BaseModel {
     
     var coverSmall: String?  //小图
     
-
-    
-    
-
     
 }

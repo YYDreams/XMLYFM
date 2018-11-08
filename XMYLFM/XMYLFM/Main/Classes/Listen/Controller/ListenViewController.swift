@@ -53,7 +53,7 @@ class ListenViewController: BaseTableViewController {
     private lazy var advancedManager: LTAdvancedManager = {
         
         
-        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
+        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y:0, width: screenW, height: screenH), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
             guard let strongSelf = self else { return UIView() }
             let headerView = strongSelf.headerView
             return headerView
@@ -65,28 +65,12 @@ class ListenViewController: BaseTableViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-        
         self.view.addSubview(advancedManager)
         
-        
+        self.title = "我听"
     }
     
 }
 
-extension ListenViewController{
-    
-    private func setupSubView(){
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-}
 

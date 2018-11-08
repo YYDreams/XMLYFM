@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import JXMarqueeView
 
 class FMOneListenCell: BaseCell {
 
 
-    
+    private let marqueeView = JXMarqueeView()
+
     //背景
     private lazy var imgView: UIImageView = {
        
@@ -96,7 +98,19 @@ class FMOneListenCell: BaseCell {
         addSubview(titleLabel)
         addSubview(subTitleLabel)
         addSubview(playBtn)
-        
+        addSubview(marqueeView)
+
+        marqueeView.contentView = self.subTitleLabel
+        marqueeView.contentMargin = 10
+        marqueeView.marqueeType = .reverse
+        marqueeView.frameInterval = 3
+        marqueeView.snp.makeConstraints { (make) in
+            make.left.equalTo(self.titleLabel)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
+            make.height.equalTo(25)
+            make.left.equalTo(self.titleLabel)
+            make.right.equalToSuperview().offset(-180)
+        }
         imgView.snp.makeConstraints { (make) in
             make.top.equalTo(10)
             make.left.equalTo(15)
@@ -110,12 +124,7 @@ class FMOneListenCell: BaseCell {
             make.height.equalTo(20)
             
         }
-        subTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(titleLabel.snp.left)
-            make.top.equalTo(titleLabel.snp.bottom)
-            make.height.equalTo(20)
-            
-        }
+
         
         playBtn.snp.makeConstraints { (make) in
             

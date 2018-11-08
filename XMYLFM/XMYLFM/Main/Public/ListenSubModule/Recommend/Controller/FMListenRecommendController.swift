@@ -18,9 +18,10 @@ class FMListenRecommendController: UIViewController,LTTableViewProtocal {
     //MARK:Lazy Method
     private lazy var tableView: UITableView = {
         let tableView = tableViewConfig(self, self, .plain)
+//        tableView.backgroundColor = UIColor.red
         tableView.frame = CGRect(x: 0, y: 0, width: screenW, height: screenH-50-navHeight)
         tableView.register(FMListenRecommendCell.self, forCellReuseIdentifier: "FMListenRecommendCellID")
-        
+        tableView.tableFooterView = UIView()
         
         return tableView
     }()
@@ -47,6 +48,7 @@ extension FMListenRecommendController{
         self.view.addSubview(tableView)
         glt_scrollView = tableView
         
+ 
         setupRefresh()
     }
     
@@ -56,7 +58,7 @@ extension FMListenRecommendController{
     
     private func setupRefresh(){
         
-        tableView.mj_header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+        tableView.mj_header =  HHRefreshGifHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
         
         tableView.mj_footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
         
@@ -85,7 +87,7 @@ extension FMListenRecommendController{
     private func   loadHomeStatusFromNetwork(isNewData:Bool){
         
         var pageId = 0
-//        var pageSize = 30
+        
         if isNewData {
             pageId = 1
             
@@ -135,13 +137,9 @@ extension FMListenRecommendController{
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
             
-            
         }
-        
-        
     }
 }
-
 
 extension FMListenRecommendController:UITableViewDataSource,UITableViewDelegate{
     

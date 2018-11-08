@@ -22,10 +22,24 @@ let MAIN_URL_MOCKY = "http://www.mocky.io"
 
 let MAIN_URL_M_XMLY = "http://m.ximalaya.com"
 
+/****************首页******************/
+//首页tab数据   显示推荐 vip 小说 直播等等
+let kHomeTabsUrl = "/v2/5be3dc6a2f00004e00d9f199"
+
+//轮播图 collectionView中的(经典必听、每日必听等等)   喜马热搜榜
+let kHomeAllUrl = "/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2"
+
+//http://mobile.ximalaya.com/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2
+
+//猜你喜欢
+//&pageId=1&pageSize=20 当前页码和一页加载的数量 做上拉和下拉需要 则这里拿出来 到时网络请求时拼接
+let kHomeguessYouLike = "/discovery-firstpage/guessYouLike/list/ts-1541660622723?appid=0&device=iPhone&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&inreview=false&network=WIFI&operator=3&scale=2&uid=0&version=6.5.24&xt=1541660622724"
+//http://mobile.ximalaya.com/discovery-firstpage/guessYouLike/list/ts-1541660622723?appid=0&device=iPhone&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&inreview=false&network=WIFI&operator=3&pageId=1&pageSize=20&scale=2&uid=0&version=6.5.24&xt=1541660622724
+
 
 /****************我听******************/
 //订阅
-//let kDiscoveryTabsUrl = "/discovery-stream-mobile/discoveryPage/wholeContent/tabs/ts-1541140247973"
+let kDiscoverySubscribeUrl = "/v2/5be395ac2f00006b00d9f0ea"
 
 //一键听
 let kOnetListenUrl = "/radio-station/v1/subscribe-channel/list?pageId=1"
@@ -33,8 +47,6 @@ let kOnetListenUrl = "/radio-station/v1/subscribe-channel/list?pageId=1"
 //推荐
 let kListenSubscribeUrl = "/subscribe/v2/subscribe/recommend/unlogin"
 //http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=1&pageSize=30
-//http://180.153.255.6/subscribe/v2/subscribe/recommend/unlogin?device=iPhone&pageId=2&pageSize=30
-
 
 /****************发现******************/
 

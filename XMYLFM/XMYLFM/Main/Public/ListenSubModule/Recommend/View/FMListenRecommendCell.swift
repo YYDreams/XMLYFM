@@ -213,13 +213,14 @@ class FMListenRecommendCell: BaseCell {
 
             make.top.equalTo(imgView.snp.top).offset(5)
             make.left.equalTo(imgView.snp.right).offset(10)
+            make.right.equalTo(-10)
             
         }
         
         subTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.left)
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.right.equalTo(-10)
+            make.right.equalTo(titleLabel.snp.right)
         }
         
         lastUpdateAtLabel.snp.makeConstraints { (make) in

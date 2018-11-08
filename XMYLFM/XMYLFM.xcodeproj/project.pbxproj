@@ -76,6 +76,7 @@
 		78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */; };
 		78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */; };
 		78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */; };
+		9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
 		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMGuessYouLikeCell.swift; sourceTree = "<group>"; };
 		C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -610,8 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				78D0CA102194199B008B85EE /* Controller */,
-				78D0CA112194199B008B85EE /* Model */,
-				78D0CA122194199B008B85EE /* View */,
+				9C2D551E219479F3009176A6 /* View */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -622,20 +623,6 @@
 				78D0CA19219419E1008B85EE /* FMHomeRecommendController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		78D0CA112194199B008B85EE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		78D0CA122194199B008B85EE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		78D0CA132194199B008B85EE /* VIP */ = {
@@ -1046,6 +1033,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9C2D551E219479F3009176A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9C58F4C4218D251E00AE569F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1320,6 +1315,7 @@
 				78C26FD82192E7DA000126EA /* FMListRecommedModel.swift in Sources */,
 				78ED2E982189A68400ADEC10 /* ListenViewController.swift in Sources */,
 				783156BE219025B900D0D890 /* FMCircleController.swift in Sources */,
+				9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */,
 				78C26FD42192E7AE000126EA /* FMOneListenCell.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
 				78D0CA1E21941A0F008B85EE /* FMNovelController.swift in Sources */,

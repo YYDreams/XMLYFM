@@ -19,6 +19,7 @@ let isIphoneX = screenH == 812 ? true : false
 
 let navHeight : CGFloat = isIphoneX ? 88 : 64
 
+let tabBarHeight: CGFloat = (isIphoneX ? 83 : 49)
 
 let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
 

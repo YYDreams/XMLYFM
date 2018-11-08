@@ -8,28 +8,104 @@
 
 import UIKit
 
-class FMHomeRecommendController: BaseUIViewController {
+class FMHomeRecommendController: BaseTableViewController {
+    
+    private lazy var squareArr: [DiscoverModel] = [DiscoverModel]()
 
+    private lazy var headerView: DiscoverHeaderView = {
+        
+        let headerView = DiscoverHeaderView(frame: CGRect(x: 0, y: 0, width: screenW, height: 100))
+        
+        return headerView
+        
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+         loadDataFormNetwork()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FMHomeRecommendCellID")
 
-        // Do any additional setup after loading the view.
-    }
+        
+        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 180))
+        self.tableView.tableHeaderView?.backgroundColor = UIColor.red
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension FMHomeRecommendController {
+    private func loadDataFormNetwork(){
+        
+        let params = ["channel":"ios-b1",
+                      "code":"43_440000_4403",
+                      "device":"iPhone",
+                      "version":"6.5.24"
+            ] as [String: AnyObject]
+        
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_6, urlString: kDiscoveryTabsUrl, parameters: params) { (result, error) in
+            
+            if error != nil {
+                return
+            }
+            
+            guard  let resultDic  = result as? [String : AnyObject] else{
+                return
+            }
+            
+            
+            let dataDic = resultDic["data"]
+            
+            guard let resultDataDic = dataDic as? [String : AnyObject] else{
+                
+                return
+            }
+            
+            
+            guard let resultArr =  resultDataDic["square"] as? [[String: AnyObject]] else{
+                return
+            }
+            
+            for  square in resultArr{
+                
+                let squareModel:DiscoverModel  = DiscoverModel.deserialize(from: square)!
+                
+                self.squareArr.append(squareModel)
+                
+                self.headerView.square = self.squareArr
+            }
+            self.tableView.reloadData()
+        }
     }
-    */
+}
 
+extension FMHomeRecommendController{
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        return  headerView
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 100
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FMHomeRecommendCellID", for: indexPath)
+        
+        cell.textLabel?.text = "xxxxxxxxxxxxxx"
+        
+        
+        return cell
+        
+    }
+    
+    
+    
+    
 }

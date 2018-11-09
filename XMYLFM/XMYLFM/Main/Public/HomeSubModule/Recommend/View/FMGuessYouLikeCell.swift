@@ -8,91 +8,58 @@
 
 import UIKit
 
-class FMGuessYouLikeCell: UICollectionViewCell {
+class FMGuessYouLikeCell: BaseCell {
     
-    //整个内容View
-    private lazy var bgView:UIView = {
-       
-        return UIView()
+    private lazy var collectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout.init()
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        layout.minimumInteritemSpacing = 5 //列间隙
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: (screenW - 45)/3, height:(screenW - 120)/2.0)
+        let collectionView = UICollectionView.init(frame:CGRect(x: 0, y: 0, width: screenW, height: 300), collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.white
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(FMLikeCollectionViewCell.self, forCellWithReuseIdentifier: "FMLikeCollectionViewCellID")
+        return collectionView
     }()
     
-    //图片
-    private lazy var  imgView: UIImageView = {
-    
-        let imgView = UIImageView()
-        imgView.layer.cornerRadius = 8
-        imgView.layer.masksToBounds = true
-        return imgView
-    }()
-    
-    //播放img
-    private lazy var  playImgView: UIImageView = {
-        
-        return  UIImageView(image: UIImage(named: ""))
-        
-    }()
-    //播放次数Label
-    private lazy var playLabel: UILabel = {
-        
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
-        label.textColor = UIColor.white
-        return label
-    }()
-    
-    
-
-    
-    //title
-    private lazy var titleLabel: UILabel = {
-        
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
-        titleLabel.textColor = UIColor.black
-        titleLabel.numberOfLines = 2
-        return titleLabel
-    }()
-    
-
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupSubView()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 extension  FMGuessYouLikeCell{
     
     private func setupSubView(){
         
-        addSubview(bgView)
-        bgView.addSubview(imgView)
-        bgView.addSubview(playImgView)
-        bgView.addSubview(playLabel)
-        bgView.addSubview(titleLabel)
+        addSubview(collectionView)
         
         
+    }
+    
+    
+}
+
+extension FMGuessYouLikeCell:UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        bgView.snp.makeConstraints { (make) in
-            make.top.bottom.left.right.equalToSuperview()
-        }
-        
-        imgView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-            make.bottom.equalTo(titleLabel.snp.top)
-            
-        }
-     
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(imgView.snp.left)
-            make.bottom.equalToSuperview()
-            make.height.equalTo(20)
-        }
-        
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FMLikeCollectionViewCellID", for: indexPath) as! FMLikeCollectionViewCell
+        return cell
     }
     
     

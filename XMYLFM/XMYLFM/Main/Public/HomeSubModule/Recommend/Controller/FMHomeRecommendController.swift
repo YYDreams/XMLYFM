@@ -21,16 +21,29 @@ class FMHomeRecommendController: BaseTableViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
          loadDataFormNetwork()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FMHomeRecommendCellID")
 
-        
-        self.tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 180))
-        self.tableView.tableHeaderView?.backgroundColor = UIColor.red
 
     }
     
 
+}
+
+extension FMHomeRecommendController{
+    
+    private func setupTableView(){
+        
+        tableView.register(FMGuessYouLikeCell.self, forCellReuseIdentifier: "FMGuessYouLikeCellID")
+        
+        
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 180))
+        tableView.tableHeaderView?.backgroundColor = UIColor.red
+        tableView.rowHeight = 300
+        
+    }
+    
+    
 }
 extension FMHomeRecommendController {
     private func loadDataFormNetwork(){
@@ -81,7 +94,7 @@ extension FMHomeRecommendController{
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -94,12 +107,10 @@ extension FMHomeRecommendController{
         
         return 100
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FMHomeRecommendCellID", for: indexPath)
-        
-        cell.textLabel?.text = "xxxxxxxxxxxxxx"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FMGuessYouLikeCellID", for: indexPath) as! FMGuessYouLikeCell 
         
         return cell
         

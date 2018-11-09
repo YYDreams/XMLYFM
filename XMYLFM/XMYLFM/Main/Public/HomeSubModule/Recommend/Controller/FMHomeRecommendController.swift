@@ -10,7 +10,7 @@ import UIKit
 
 class FMHomeRecommendController: BaseTableViewController {
     
-    private lazy var squareArr: [DiscoverModel] = [DiscoverModel]()
+    private lazy var dataArr: [FMHomeRecommendHeaderModel] = [FMHomeRecommendHeaderModel]()
 
     private lazy var headerView: DiscoverHeaderView = {
         
@@ -21,12 +21,15 @@ class FMHomeRecommendController: BaseTableViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-         loadDataFormNetwork()
+          setupTableView()
 
 
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadDataFormNetwork()
+
+    }
 
 }
 
@@ -36,57 +39,67 @@ extension FMHomeRecommendController{
         
         tableView.register(FMGuessYouLikeCell.self, forCellReuseIdentifier: "FMGuessYouLikeCellID")
         
-        
+        print("tableView.frame\(tableView.frame)")
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 180))
         tableView.tableHeaderView?.backgroundColor = UIColor.red
-        tableView.rowHeight = 300
+        tableView.rowHeight = (screenW - 120)/2.0 * 2 + 20
         
     }
     
+    @objc private func refreshOnClick(){
+        
+        print("refreshOnClickrefreshOnClick")
+    }
     
 }
 extension FMHomeRecommendController {
     private func loadDataFormNetwork(){
         
-        let params = ["channel":"ios-b1",
-                      "code":"43_440000_4403",
-                      "device":"iPhone",
-                      "version":"6.5.24"
-            ] as [String: AnyObject]
-        
-        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_6, urlString: kDiscoveryTabsUrl, parameters: params) { (result, error) in
+ 
+        NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL, urlString: kHomeAllUrl, parameters: [:]) { (result, error) in
             
             if error != nil {
                 return
             }
             
-            guard  let resultDic  = result as? [String : AnyObject] else{
-                return
+            guard let resultDic   = result  as? [String: AnyObject] else  {return}
+            
+            
+            guard let headerArr = resultDic["header"] as? [[String : AnyObject]] else {return}
+            
+            for (_, header) in headerArr.enumerated() {
+               
+               
+                let item = header["item"] as? [String:AnyObject]
+
+                
+                guard let itemList = item!["list"] as? [[String:AnyObject]] else {return}
+                
+                for data in itemList{
+                    
+                    guard let dataArr = data["data"] as? [[String: AnyObject]]  else {return}
+                    
+    
+                    
+                    for dataM in dataArr {
+                        
+                        
+                        let dataModel:FMHomeRecommendHeaderModel = FMHomeRecommendHeaderModel.deserialize(from: dataM)!
+                        
+                        
+                        self.dataArr.append(dataModel)
+                        
+                    }
+                    
+                }
+
             }
             
-            
-            let dataDic = resultDic["data"]
-            
-            guard let resultDataDic = dataDic as? [String : AnyObject] else{
-                
-                return
-            }
-            
-            
-            guard let resultArr =  resultDataDic["square"] as? [[String: AnyObject]] else{
-                return
-            }
-            
-            for  square in resultArr{
-                
-                let squareModel:DiscoverModel  = DiscoverModel.deserialize(from: square)!
-                
-                self.squareArr.append(squareModel)
-                
-                self.headerView.square = self.squareArr
-            }
+            print("=================\(self.dataArr)==========================\(self.dataArr.count)")
+
             self.tableView.reloadData()
         }
+        
     }
 }
 
@@ -117,6 +130,26 @@ extension FMHomeRecommendController{
     }
     
     
+  override  func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 40))
     
+        let  refreshBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: footerView.frame.height))
+             refreshBtn.center = footerView.center
+             refreshBtn.setTitle("换一批", for: .normal)
+             refreshBtn.backgroundColor = kBtnBgColor
+             refreshBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+             refreshBtn.layer.cornerRadius = 10
+             refreshBtn.layer.masksToBounds = true
+             refreshBtn.setTitleColor(kThemeColor, for: .normal)
+             refreshBtn.addTarget(self, action: #selector(refreshOnClick), for: .touchUpInside)
     
+            footerView.addSubview(refreshBtn)
+         return footerView
+    
+        
+    }
+   override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 40
+    }
 }

@@ -16,8 +16,9 @@ class FMGuessYouLikeCell: BaseCell {
         layout.minimumInteritemSpacing = 5 //列间隙
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
+        
         layout.itemSize = CGSize(width: (screenW - 45)/3, height:(screenW - 120)/2.0)
-        let collectionView = UICollectionView.init(frame:CGRect(x: 0, y: 0, width: screenW, height: 300), collectionViewLayout: layout)
+        let collectionView = UICollectionView.init(frame:CGRect(x: 0, y: 0, width: screenW, height: (screenW - 120)/2.0 * 2 + 20), collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white

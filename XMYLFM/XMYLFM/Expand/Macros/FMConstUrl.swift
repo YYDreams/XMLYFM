@@ -30,6 +30,7 @@ let kHomeTabsUrl = "/v2/5be3dc6a2f00004e00d9f199"
 let kHomeAllUrl = "/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2"
 
 //http://mobile.ximalaya.com/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2
+//http://180.153.255.6/discovery-feed/v2/mix/ts-1541755553738?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541755553739&traitKey=&onlyBody=false&offset=0&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2
 
 //猜你喜欢
 //&pageId=1&pageSize=20 当前页码和一页加载的数量 做上拉和下拉需要 则这里拿出来 到时网络请求时拼接

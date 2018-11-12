@@ -84,7 +84,7 @@ class FMHomeHeaderView: UIView {
         didSet{
          
             self.pagerView.reloadData()
-            self.pageControl.numberOfPages = 10
+            self.pageControl.numberOfPages = self.dataArr.count
         }
     }
     

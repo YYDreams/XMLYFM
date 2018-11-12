@@ -18,6 +18,8 @@ pod 'LTScrollView'
 
 #跑马灯
 pod 'JXMarqueeView'
+#轮播图
+pod 'TYCyclePagerView'
 
   target 'XMYLFMTests' do
     inherit! :search_paths

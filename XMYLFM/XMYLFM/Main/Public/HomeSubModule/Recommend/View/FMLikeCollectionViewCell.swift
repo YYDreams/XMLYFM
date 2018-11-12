@@ -47,7 +47,7 @@ class FMLikeCollectionViewCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
+        titleLabel.font = UIFont.systemFont(ofSize: 10)
         titleLabel.textColor = UIColor.black
         titleLabel.numberOfLines = 2
         return titleLabel
@@ -64,6 +64,42 @@ class FMLikeCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    var model: FMHomeRecommendHeaderModel? {
+        
+        didSet{
+            guard let model = model  else {
+                return
+                
+            }
+            let url = URL(string: model.pic ?? "")
+            imgView.sd_setImage(with: url, placeholderImage:  UIImage(named:"empty_picture"))
+            
+            titleLabel.text = model.title
+            
+            var  playsCounts: String?
+            if model.playsCount > 100000000 {
+                
+                playsCounts = String(format: "%.1f亿", Double(model.playsCount)/100000000)
+                
+            }else if (model.playsCount > 10000 ){
+                
+                playsCounts = String(format: "%.1f万", Double(model.playsCount)/10000)
+                
+                
+            }else{
+                playsCounts = "\(model.playsCount)"
+            }
+            
+            playLabel.text = playsCounts
+            
+        }
+       
+      
+        
+    }
+
+    
 }
 extension  FMLikeCollectionViewCell{
     
@@ -102,6 +138,7 @@ extension  FMLikeCollectionViewCell{
         
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(imgView.snp.left)
+            make.right.equalTo(imgView.snp.right)
             make.bottom.equalToSuperview()
             make.height.equalTo(20)
         }

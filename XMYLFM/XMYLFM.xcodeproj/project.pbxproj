@@ -76,7 +76,7 @@
 		78ED2E9E2189A77700ADEC10 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */; };
 		78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */; };
 		78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */; };
-		78F32C4B219516FA0013E6EC /* FMGuessYouLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4A219516FA0013E6EC /* FMGuessYouLikeView.swift */; };
+		78F32C4B219516FA0013E6EC /* FMHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */; };
 		78F32C4D21951A1B0013E6EC /* FMLikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */; };
 		78F32C94219581030013E6EC /* FMHomeRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C93219581030013E6EC /* FMHomeRecommendModel.swift */; };
 		9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */; };
@@ -176,7 +176,7 @@
 		78ED2E9D2189A77700ADEC10 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		78F32C4A219516FA0013E6EC /* FMGuessYouLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMGuessYouLikeView.swift; sourceTree = "<group>"; };
+		78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeHeaderView.swift; sourceTree = "<group>"; };
 		78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMLikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F32C93219581030013E6EC /* FMHomeRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeRecommendModel.swift; sourceTree = "<group>"; };
 		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1053,7 +1053,7 @@
 			children = (
 				9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */,
 				78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */,
-				78F32C4A219516FA0013E6EC /* FMGuessYouLikeView.swift */,
+				78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1234,6 +1234,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TYCyclePagerView/TYCyclePagerView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1246,6 +1247,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYCyclePagerView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1314,7 +1316,7 @@
 				78C26FDE2192F51C000126EA /* FMListenRecommendCell.swift in Sources */,
 				786A8B96218AAB8F00A1677D /* FMConst.swift in Sources */,
 				7830165A218BE42B005C148F /* MineModel.swift in Sources */,
-				78F32C4B219516FA0013E6EC /* FMGuessYouLikeView.swift in Sources */,
+				78F32C4B219516FA0013E6EC /* FMHomeHeaderView.swift in Sources */,
 				78C26FD22192D10F000126EA /* FMSubscribeController.swift in Sources */,
 				78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */,
 				783156CE21904AE000D0D890 /* FMIntereDubModel.swift in Sources */,

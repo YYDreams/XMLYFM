@@ -27,27 +27,35 @@ class FMGuessYouLikeCell: BaseCell {
         return collectionView
     }()
     
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupSubView()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    var dataArr:[FMHomeRecommendHeaderModel] = [FMHomeRecommendHeaderModel](){
+        
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
+
 }
 extension  FMGuessYouLikeCell{
-    
+   
     private func setupSubView(){
         
         addSubview(collectionView)
-        
-        
+  
     }
-    
-    
+
 }
 
 extension FMGuessYouLikeCell:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -55,11 +63,12 @@ extension FMGuessYouLikeCell:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 6
+        return self.dataArr.count > 6 ? 6 : self.dataArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FMLikeCollectionViewCellID", for: indexPath) as! FMLikeCollectionViewCell
+        cell.model = self.dataArr[indexPath.row]
         return cell
     }
     

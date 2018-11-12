@@ -10,13 +10,22 @@ import UIKit
 
 class FMHomeRecommendController: BaseTableViewController {
     
-    private lazy var dataArr: [FMHomeRecommendHeaderModel] = [FMHomeRecommendHeaderModel]()
+    private lazy var focusArr: [FMHomeRecommendHeaderModel] = [FMHomeRecommendHeaderModel]()
+    private lazy var squareDataArr: [DiscoverModel] = [DiscoverModel]() 
+    private lazy var guessYouLikeArr:[FMHomeRecommendHeaderModel] = [FMHomeRecommendHeaderModel]()
 
     private lazy var headerView: DiscoverHeaderView = {
         
         let headerView = DiscoverHeaderView(frame: CGRect(x: 0, y: 0, width: screenW, height: 100))
         
         return headerView
+        
+    }()
+    private lazy var bannerView: FMHomeHeaderView = {
+        
+        let bannerView = FMHomeHeaderView(frame: CGRect(x: 0, y: 0, width: screenW, height: 200))
+        
+        return bannerView
         
     }()
     override func viewDidLoad() {
@@ -40,8 +49,7 @@ extension FMHomeRecommendController{
         tableView.register(FMGuessYouLikeCell.self, forCellReuseIdentifier: "FMGuessYouLikeCellID")
         
         print("tableView.frame\(tableView.frame)")
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 180))
-        tableView.tableHeaderView?.backgroundColor = UIColor.red
+        tableView.tableHeaderView = self.bannerView
         tableView.rowHeight = (screenW - 120)/2.0 * 2 + 20
         
     }
@@ -66,41 +74,69 @@ extension FMHomeRecommendController {
             
             
             guard let headerArr = resultDic["header"] as? [[String : AnyObject]] else {return}
-            
-            for (_, header) in headerArr.enumerated() {
-               
-               
-                let item = header["item"] as? [String:AnyObject]
+     
+
+            for heaer in headerArr {
+                
+                guard let itemDic = heaer["item"] else { return }
 
                 
-                guard let itemList = item!["list"] as? [[String:AnyObject]] else {return}
-                
-                for data in itemList{
+                guard  let moduleType:String = (itemDic["moduleType"] as? String) else { return}
+          
+                if moduleType == "focus"{ // 轮播图
                     
-                    guard let dataArr = data["data"] as? [[String: AnyObject]]  else {return}
+                    guard  let focusList:[[String:AnyObject]] = (itemDic["list"] as? [[String:AnyObject]]) else { return }
                     
-    
+                    for listData in focusList{
+                        
+                        
+                        guard   let listDataA = listData["data"] as? [[String:AnyObject]] else {return}
+                        
+                        for listDataB in listDataA {
+                            
+                            let model = FMHomeRecommendHeaderModel.deserialize(from: listDataB)!
+                            
+                            self.focusArr.append(model)
+                        }
+                        
+                    }
+
                     
-                    for dataM in dataArr {
+                }else if(moduleType == "square"){ //方块
+                    
+                    guard  let squareList:[[String:AnyObject]] = (itemDic["list"] as? [[String:AnyObject]]) else { return }
+
+                    for square in squareList {
                         
-                        
-                        let dataModel:FMHomeRecommendHeaderModel = FMHomeRecommendHeaderModel.deserialize(from: dataM)!
-                        
-                        
-                        self.dataArr.append(dataModel)
+                        let model:DiscoverModel = DiscoverModel.deserialize(from: square)!
+
+                        self.squareDataArr.append(model)
                         
                     }
                     
+                }else { //猜你喜欢
+                    
+                    guard let guessYouLikeList:[[String:AnyObject]] = (itemDic["list"] as? [[String:AnyObject]]) else{ return}
+                    
+                    for guessYouLike in guessYouLikeList {
+                        
+                        let model: FMHomeRecommendHeaderModel = FMHomeRecommendHeaderModel.deserialize(from: guessYouLike)!
+                        
+                        self.guessYouLikeArr.append(model)
+                    }
+                    
                 }
-
+                
+                
             }
             
-            print("=================\(self.dataArr)==========================\(self.dataArr.count)")
-
             self.tableView.reloadData()
-        }
-        
-    }
+            self.headerView.square = self.squareDataArr
+            self.bannerView.dataArr = self.focusArr
+            print("%=====cfocusArr=======\(self.focusArr.count)")
+      }
+  }
+    
 }
 
 extension FMHomeRecommendController{
@@ -124,7 +160,7 @@ extension FMHomeRecommendController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FMGuessYouLikeCellID", for: indexPath) as! FMGuessYouLikeCell 
-        
+        cell.dataArr = self.guessYouLikeArr
         return cell
         
     }

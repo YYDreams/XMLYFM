@@ -24,4 +24,11 @@ class FMHomeRecommendHeaderModel: BaseModel {
     var coverPath: String?
     
     var title: String?
+    
+    var pic: String? // 猜你喜欢icon
+    
+    var playsCount: Int = 0  //数量
+    
+    
+    
 }

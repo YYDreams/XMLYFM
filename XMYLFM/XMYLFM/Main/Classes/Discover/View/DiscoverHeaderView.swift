@@ -17,11 +17,11 @@ class DiscoverHeaderView: UIView {
 
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: (screenW-30)/5, height:90)
+        layout.itemSize = CGSize(width: (screenW-20)/5, height:90)
         let collectionView = UICollectionView.init(frame:self.bounds, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self

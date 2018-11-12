@@ -24,6 +24,7 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SnapKit (4.0.1)
+  - TYCyclePagerView (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SnapKit (~> 4.0.0)
+  - TYCyclePagerView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -47,6 +49,7 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - SnapKit
+    - TYCyclePagerView
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -58,7 +61,8 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  TYCyclePagerView: b70858c9b5d0e80e1e3129ff5ceb027eb0f76d44
 
-PODFILE CHECKSUM: 908fed7c146258d20461bdb41f841b15ace42010
+PODFILE CHECKSUM: a843fbd732c4873c166686a17fca2d183e9e5ebd
 
 COCOAPODS: 1.6.0.beta.2

@@ -14,7 +14,7 @@ private let kItemSize:CGFloat = 0.9;
 
 class FMHomeHeaderView: UIView {
 
- 
+    //MARK: Lazy Methods
     private lazy var pagerView:TYCyclePagerView = {
        
         let pagerView = TYCyclePagerView()
@@ -28,40 +28,24 @@ class FMHomeHeaderView: UIView {
     private lazy var pageControl:TYPageControl = {
         
         let pageControl = TYPageControl()
-       pageControl.currentPageIndicatorSize = CGSize(width: 6, height: 6)
+       pageControl.currentPageIndicatorSize = CGSize(width: 5, height: 5)
         pageControl.pageIndicatorTintColor = UIColor.withHex(hexString: "000000", alpha: 0.6)
 
         return pageControl
     }()
-    
+    //MARK: init Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
+            setupSubView()
+        
+    }
+ //MARK: setupSubView 
+    private func setupSubView() {
         
         addSubview(self.pagerView)
         addSubview(self.pageControl)
         
         
-        
-        
-    }
- 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-//          pagerView.frame =  CGRect(x: 0, y: 40, width: screenW  , height: 160)
-/**
-         UIPageControl *pageControl = [[UIPageControl alloc] init];
-         CGSize pointSize = [pageControl sizeForNumberOfPages:self.datas.count];
-         CGFloat page_x = -(self.pageControl.bounds.size.width - pointSize.width) / 2 ;
-         [self.pageControl setBounds:CGRectMake(page_x,
-         self.pageControl.bounds.origin.y,
-         self.pageControl.bounds.size.width,
-         self.pageControl.bounds.size.height)];
-         CGFloat pageCtrlY = CGRectGetHeight(_pagerView.frame) - 46;
-         self.pageControl.frame = CGRectMake(0, pageCtrlY, CGRectGetWidth(_pagerView.frame) - 30, 26);
-         */
-
         self.pagerView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(40)
@@ -69,10 +53,11 @@ class FMHomeHeaderView: UIView {
         }
         
         self.pageControl.snp.makeConstraints { (make) in
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(10)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.snp.bottom).offset(-20)
+            make.bottom.equalTo(self.snp.bottom).offset(-10)
         }
+     
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -89,7 +74,7 @@ class FMHomeHeaderView: UIView {
     }
     
 }
-
+//MARK: <TYCyclePagerViewDataSource,TYCyclePagerViewDelegate>
 extension FMHomeHeaderView:TYCyclePagerViewDataSource,TYCyclePagerViewDelegate{
     
     
@@ -116,25 +101,30 @@ extension FMHomeHeaderView:TYCyclePagerViewDataSource,TYCyclePagerViewDelegate{
         return layout
     }
     
+    func pagerView(_ pageView: TYCyclePagerView, didScrollFrom fromIndex: Int, to toIndex: Int) {
+        
+        self.pageControl.currentPage = toIndex
+        self.pageControl.currentPageIndicatorSize = CGSize(width: 8, height: 8)
+        
+        
+    }
+    func pagerView(_ pageView: TYCyclePagerView, didSelectedItemCell cell: UICollectionViewCell, at index: Int) {
+        
+        print("\(self.dataArr[index].cover ?? "")")
+        
+    }
     
 }
-
+//MARK:-----------------------FMBannerCell-------------------------
 class FMBannerCell: UICollectionViewCell {
-    
-    
     var imageURL: URL?{
         didSet{
-           
             addSubview(imgView)
             imgView.snp.makeConstraints { (make) in
-                
                 make.edges.equalTo(self).inset(UIEdgeInsetsMake(0, 0, 0, 0))
-                
             }
             self.imgView.sd_setImage(with: imageURL)
-      
         }
-        
     }
     private lazy var imgView: UIImageView = {
         
@@ -149,3 +139,102 @@ class FMBannerCell: UICollectionViewCell {
     }()
     
 }
+
+
+//MARK:-----------------------FMHomeSectionView-------------------------
+class FMHomeSectionView: UIView {
+
+     lazy var titleLabel:UILabel = {
+        
+        let titleLabel = UILabel()
+        
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        titleLabel.text = "猜你喜欢"
+        return titleLabel
+        
+    }()
+     lazy var imgView1:UIImageView = {
+       
+        return UIImageView(image: UIImage(named: "home_gif_recommended_0"))
+        
+    }()
+    
+     lazy var clickMeLabel:UILabel = {
+        
+        let clickMeLabel = UILabel()
+        
+        clickMeLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        clickMeLabel.text = "点我猜更准"
+        clickMeLabel.textColor = kThemeColor
+        return clickMeLabel
+    }()
+    
+     lazy var moreLabel:UILabel = {
+        
+        let moreLabel = UILabel()
+        
+        moreLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        moreLabel.textColor = k6Color
+        moreLabel.text = "更多 >"
+        return moreLabel
+        
+    }()
+    
+    
+    
+      func isGuessYouLike(isGuessYouLike: Bool){
+        moreLabel.isHidden = !isGuessYouLike
+        clickMeLabel.isHidden = !isGuessYouLike
+        imgView1.isHidden = !isGuessYouLike
+
+    }
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupSubView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSubView(){
+        
+        backgroundColor = UIColor.white
+        addSubview(titleLabel)
+        addSubview(imgView1)
+        addSubview(clickMeLabel)
+        addSubview(moreLabel)
+        
+        
+        titleLabel.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(15)
+            make.centerY.equalToSuperview()
+        }
+        
+        imgView1.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(titleLabel.snp.right).offset(5)
+            make.width.equalTo(15)
+            make.height.equalTo(11)
+            make.centerY.equalToSuperview()
+        }
+        clickMeLabel.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(imgView1.snp.right)
+            make.centerY.equalToSuperview()
+        }
+        moreLabel.snp.makeConstraints { (make) in
+            
+            make.right.equalTo(-15)
+            make.centerY.equalToSuperview()
+        }
+        
+        
+        
+    }
+    
+}
+

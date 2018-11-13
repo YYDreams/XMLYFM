@@ -10,6 +10,11 @@
 		51E0F7D6005DCEE69AA1334D /* Pods_XMYLFMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */; };
 		569C7E3C50D5EDC5A84FE85E /* Pods_XMYLFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */; };
 		76BF9D10B140A75B74759F31 /* Pods_XMYLFMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */; };
+		78019B17219A6E94001157DB /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78019B16219A6E94001157DB /* TestController.swift */; };
+		78019B19219A7DAD001157DB /* FMHomeModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78019B18219A7DAD001157DB /* FMHomeModuleCell.swift */; };
+		78019B1B219AAA14001157DB /* FMHotSearchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78019B1A219AAA14001157DB /* FMHotSearchListCell.swift */; };
+		78019B1D219AD59B001157DB /* FMHomeLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78019B1C219AD59B001157DB /* FMHomeLiveCell.swift */; };
+		78019B1F219AD5C1001157DB /* FMHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78019B1E219AD5C1001157DB /* FMHomeBaseCell.swift */; };
 		7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817E375218C436D00385D70 /* DiscoverHeaderCell.swift */; };
 		7817E378218C4E2800385D70 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817E377218C4E2800385D70 /* UIColor+Extension.swift */; };
 		7830165A218BE42B005C148F /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78301659218BE42B005C148F /* MineModel.swift */; };
@@ -77,7 +82,6 @@
 		78ED2EA02189A8E100ADEC10 /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */; };
 		78ED2EA22189B3B100ADEC10 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */; };
 		78F32C4B219516FA0013E6EC /* FMHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */; };
-		78F32C4D21951A1B0013E6EC /* FMLikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */; };
 		78F32C94219581030013E6EC /* FMHomeRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C93219581030013E6EC /* FMHomeRecommendModel.swift */; };
 		9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +108,11 @@
 		36681FE7DB5280557310AF18 /* Pods_XMYLFMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		419982B0ED702356AF539E80 /* Pods-XMYLFMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5952AB1D0B283408C31B188F /* Pods-XMYLFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.release.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.release.xcconfig"; sourceTree = "<group>"; };
+		78019B16219A6E94001157DB /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		78019B18219A7DAD001157DB /* FMHomeModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeModuleCell.swift; sourceTree = "<group>"; };
+		78019B1A219AAA14001157DB /* FMHotSearchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHotSearchListCell.swift; sourceTree = "<group>"; };
+		78019B1C219AD59B001157DB /* FMHomeLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeLiveCell.swift; sourceTree = "<group>"; };
+		78019B1E219AD5C1001157DB /* FMHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeBaseCell.swift; sourceTree = "<group>"; };
 		7817E375218C436D00385D70 /* DiscoverHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverHeaderCell.swift; sourceTree = "<group>"; };
 		7817E377218C4E2800385D70 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		78301659218BE42B005C148F /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
@@ -177,7 +186,6 @@
 		78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		78ED2EA12189B3B100ADEC10 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeHeaderView.swift; sourceTree = "<group>"; };
-		78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMLikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F32C93219581030013E6EC /* FMHomeRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeRecommendModel.swift; sourceTree = "<group>"; };
 		7B6EBD13E4959C7B17A8A31F /* Pods-XMYLFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFM.debug.xcconfig"; path = "Target Support Files/Pods-XMYLFM/Pods-XMYLFM.debug.xcconfig"; sourceTree = "<group>"; };
 		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,6 +799,7 @@
 				78ED2E8D2189A5E900ADEC10 /* BaseNavViewController.swift */,
 				78ED2E8F2189A60400ADEC10 /* BaseTableViewController.swift */,
 				78ED2E9F2189A8E100ADEC10 /* BaseTabBarViewController.swift */,
+				78019B16219A6E94001157DB /* TestController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1051,9 +1060,12 @@
 		9C2D551E219479F3009176A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */,
-				78F32C4C21951A1B0013E6EC /* FMLikeCollectionViewCell.swift */,
+				78019B1E219AD5C1001157DB /* FMHomeBaseCell.swift */,
 				78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */,
+				9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */,
+				78019B18219A7DAD001157DB /* FMHomeModuleCell.swift */,
+				78019B1A219AAA14001157DB /* FMHotSearchListCell.swift */,
+				78019B1C219AD59B001157DB /* FMHomeLiveCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1297,12 +1309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78019B1B219AAA14001157DB /* FMHotSearchListCell.swift in Sources */,
 				78C26FBD2192CFE0000126EA /* ListenHeaderView.swift in Sources */,
 				783156A3218FD67D00D0D890 /* UserInfoModel.swift in Sources */,
 				78F32C94219581030013E6EC /* FMHomeRecommendModel.swift in Sources */,
 				785377772191689800D82E57 /* FMRecommendModel.swift in Sources */,
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,
 				783156C42190336A00D0D890 /* FMCollectionView.swift in Sources */,
+				78019B17219A6E94001157DB /* TestController.swift in Sources */,
 				78ED2E872189A56C00ADEC10 /* AppDelegate.swift in Sources */,
 				7817E376218C436D00385D70 /* DiscoverHeaderCell.swift in Sources */,
 				785377852191973300D82E57 /* NSDate+Extension.swift in Sources */,
@@ -1323,6 +1337,7 @@
 				783156C0219025CF00D0D890 /* FMFollowController.swift in Sources */,
 				78301662218C276A005C148F /* DiscoverModel.swift in Sources */,
 				78ED2E9A2189A69100ADEC10 /* MineViewController.swift in Sources */,
+				78019B1F219AD5C1001157DB /* FMHomeBaseCell.swift in Sources */,
 				786A8B98218AAB9B00A1677D /* FMConstUrl.swift in Sources */,
 				786A8B94218AAB5100A1677D /* NetworkTool.swift in Sources */,
 				78D0CA1C219419F7008B85EE /* FMVipController.swift in Sources */,
@@ -1338,8 +1353,8 @@
 				783156BE219025B900D0D890 /* FMCircleController.swift in Sources */,
 				9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */,
 				78C26FD42192E7AE000126EA /* FMOneListenCell.swift in Sources */,
-				78F32C4D21951A1B0013E6EC /* FMLikeCollectionViewCell.swift in Sources */,
 				78ED2E902189A60400ADEC10 /* BaseTableViewController.swift in Sources */,
+				78019B1D219AD59B001157DB /* FMHomeLiveCell.swift in Sources */,
 				78D0CA1E21941A0F008B85EE /* FMNovelController.swift in Sources */,
 				78ED2E9C2189A6A700ADEC10 /* PlayViewController.swift in Sources */,
 				78ED2E922189A62500ADEC10 /* BaseCell.swift in Sources */,
@@ -1347,6 +1362,7 @@
 				783156CB21904A6500D0D890 /* FMInterestDubCell.swift in Sources */,
 				786A8B91218A992C00A1677D /* MineCell.swift in Sources */,
 				78C26FD02192D0EE000126EA /* FMListenRecommendController.swift in Sources */,
+				78019B19219A7DAD001157DB /* FMHomeModuleCell.swift in Sources */,
 				78ED2E962189A66900ADEC10 /* HomeViewController.swift in Sources */,
 				78D0CA052193E5A5008B85EE /* FMListenChannelController.swift in Sources */,
 				786A8BA4218AD77100A1677D /* FMLoginViewController.swift in Sources */,

@@ -58,6 +58,9 @@ class DiscoverHeaderView: UIView {
 
         
     }
+    
+
+    
 
 }
 

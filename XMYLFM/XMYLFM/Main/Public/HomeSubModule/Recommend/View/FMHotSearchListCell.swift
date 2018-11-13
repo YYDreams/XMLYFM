@@ -8,30 +8,14 @@
 
 import UIKit
 
-class FMHotSearchListCell: BaseCell {
+class FMHotSearchListCell: FMHomeBaseCell {
 
-    private lazy var collectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout.init()
-        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        layout.minimumInteritemSpacing = 5 //列间隙
-        layout.minimumLineSpacing = 10
-        layout.scrollDirection = .horizontal
-        
-        layout.itemSize = CGSize(width: (screenW - 45)/2, height:45)
-        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(FMHotSearchListCollectionCell.self, forCellWithReuseIdentifier: "FMHotSearchListCollectionCellID")
-        return collectionView
-    }()
-    
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupSubView()
+           collectionView.register(FMHotSearchListCollectionCell.self, forCellWithReuseIdentifier: "FMHotSearchListCollectionCellID")
+            layout.itemSize = CGSize(width: (screenW - 45)/2, height:45)
+            layout.scrollDirection = .horizontal
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,15 +48,15 @@ extension FMHotSearchListCell{
     
 }
 
-extension FMHotSearchListCell:UICollectionViewDelegate,UICollectionViewDataSource{
+extension FMHotSearchListCell{
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.dataArr.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FMHotSearchListCollectionCellID", for: indexPath) as! FMHotSearchListCollectionCell
        cell.model = self.dataArr[indexPath.row]
        let index = indexPath.row

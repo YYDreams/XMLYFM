@@ -84,6 +84,7 @@
 		78F32C4B219516FA0013E6EC /* FMHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C4A219516FA0013E6EC /* FMHomeHeaderView.swift */; };
 		78F32C94219581030013E6EC /* FMHomeRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F32C93219581030013E6EC /* FMHomeRecommendModel.swift */; };
 		9C2D552021947A5E009176A6 /* FMGuessYouLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */; };
+		9C6CE4CF219B240500780B61 /* FMHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6CE4CE219B240500780B61 /* FMHomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		80BCF253359F7544C81DB429 /* Pods_XMYLFMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA5EDFDD9F5B419CB377ADB /* Pods-XMYLFMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMUITests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMUITests/Pods-XMYLFMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2D551F21947A5E009176A6 /* FMGuessYouLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMGuessYouLikeCell.swift; sourceTree = "<group>"; };
+		9C6CE4CE219B240500780B61 /* FMHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMHomeTableViewCell.swift; sourceTree = "<group>"; };
 		C686E113C598E38B78AD8F36 /* Pods_XMYLFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XMYLFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90BC36F2CCE13147C8E6A63 /* Pods-XMYLFMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XMYLFMTests.release.xcconfig"; path = "Target Support Files/Pods-XMYLFMTests/Pods-XMYLFMTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1066,6 +1068,7 @@
 				78019B18219A7DAD001157DB /* FMHomeModuleCell.swift */,
 				78019B1A219AAA14001157DB /* FMHotSearchListCell.swift */,
 				78019B1C219AD59B001157DB /* FMHomeLiveCell.swift */,
+				9C6CE4CE219B240500780B61 /* FMHomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1312,6 +1315,7 @@
 				78019B1B219AAA14001157DB /* FMHotSearchListCell.swift in Sources */,
 				78C26FBD2192CFE0000126EA /* ListenHeaderView.swift in Sources */,
 				783156A3218FD67D00D0D890 /* UserInfoModel.swift in Sources */,
+				9C6CE4CF219B240500780B61 /* FMHomeTableViewCell.swift in Sources */,
 				78F32C94219581030013E6EC /* FMHomeRecommendModel.swift in Sources */,
 				785377772191689800D82E57 /* FMRecommendModel.swift in Sources */,
 				78ED2E942189A64000ADEC10 /* BaseModel.swift in Sources */,

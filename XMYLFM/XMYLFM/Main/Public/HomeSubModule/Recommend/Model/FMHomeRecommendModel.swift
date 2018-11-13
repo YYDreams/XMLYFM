@@ -86,3 +86,20 @@ class  FMHotSearchListModel:BaseModel {
     var word: String? //热搜name
     
 }
+
+
+class FMHomeAlbumModel: BaseModel {
+    
+    
+    var category: String?
+    var title: String?
+    var intro: String?
+    var name:String?
+    var coverPath:String?
+    
+    
+    var playsCounts: Int = 0
+    var tracks: Int = 0
+    
+    
+}

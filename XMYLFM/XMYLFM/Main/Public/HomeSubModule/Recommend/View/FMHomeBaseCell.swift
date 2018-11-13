@@ -11,6 +11,15 @@ import UIKit
 class FMHomeBaseCell: BaseCell {
 
      lazy var collectionView : UICollectionView = {
+
+        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.white
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout.init()
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         layout.minimumInteritemSpacing = 5 //列间隙
@@ -18,12 +27,8 @@ class FMHomeBaseCell: BaseCell {
         layout.scrollDirection = .vertical
         
         layout.itemSize = CGSize(width: (screenW - 45)/3, height:(screenW - 120)/2.0)
-        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsHorizontalScrollIndicator = false
-        return collectionView
+       
+        return layout
     }()
     
     

@@ -13,6 +13,9 @@ private let FMHotSearchListCellID = "FMHotSearchListCellID" //喜马热搜榜
 
 private let FMHomeLiveCellID = "FMHomeLiveCellID" //直播
 
+private let FMHomeTableViewCellID = "FMHomeTableViewCellID" //首页 cell
+
+
 
 class FMHomeRecommendController: TestController {
     
@@ -22,6 +25,7 @@ class FMHomeRecommendController: TestController {
     private lazy var hotSearchListArr:[FMHotSearchListModel] = [FMHotSearchListModel]()  //喜马热搜榜
     private lazy var recommendArr:[FMHomeRecommendModel] = [FMHomeRecommendModel]()  //推荐数据
     private lazy var liveArr:[FMHomeRecommendLiveModel] = [FMHomeRecommendLiveModel]()  //直播数据
+    private lazy var albumArr:[FMHomeAlbumModel] = [FMHomeAlbumModel]()  //首页cell数据
 
     
     private lazy var headerView: DiscoverHeaderView = {
@@ -67,6 +71,8 @@ extension FMHomeRecommendController{
         tableView.register(FMHomeModuleCell.self, forCellReuseIdentifier: "FMHomeModuleCellID")
         tableView.register(FMHotSearchListCell.self, forCellReuseIdentifier: "FMHotSearchListCellID")
         tableView.register(FMHomeLiveCell.self, forCellReuseIdentifier: FMHomeLiveCellID)
+        tableView.register(FMHomeTableViewCell.self, forCellReuseIdentifier: FMHomeTableViewCellID)
+
 
         tableView.tableHeaderView = self.bannerView
         tableView.snp.makeConstraints{ (make) in
@@ -212,12 +218,26 @@ extension FMHomeRecommendController {
                         
                         
                     }
+                }else if (itemType == "ALBUM"){
+                    
+                    guard let itemDic1 = body["item"] as? [String : AnyObject] else { return }
+
+//                    let model:FMHomeAlbumModel = FMHomeAlbumModel.de(from: itemDic)!
+                    
+                    
+                    let model:FMHomeAlbumModel =  FMHomeAlbumModel.deserialize(from: itemDic1)!
+                    
+
+                    self.albumArr.append(model)
+                    
+                    print("categorycategory\(model.category ?? "")")
+                    
                 }
 
 
             }
             
-            print("%=====cfocusArr=======\(self.recommendArr)")
+            print("%=====cfocusArr=======\(self.albumArr)")
 
             
             
@@ -225,6 +245,9 @@ extension FMHomeRecommendController {
             self.headerView.square = self.squareDataArr
             self.bannerView.dataArr = self.focusArr
             self.tableView.reloadData()
+            print("reloadDatareloadDatareloadDatareloadDatareloadData")
+
+            
       }
   }
     
@@ -233,11 +256,12 @@ extension FMHomeRecommendController {
 extension FMHomeRecommendController{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 1
+        
+        return (section == 4) ? self.albumArr.count : 1
     }
     
      func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -293,6 +317,14 @@ extension FMHomeRecommendController{
             let cell = tableView.dequeueReusableCell(withIdentifier: FMHomeLiveCellID, for: indexPath) as! FMHomeLiveCell
             cell.dataArr =   self.liveArr
 
+            return cell
+        }else if (indexPath.section == 4){
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: FMHomeTableViewCellID, for: indexPath) as! FMHomeTableViewCell
+            
+            cell.categoryLabel.text = "XXXXXXXXXXXx"
+            
+            
             return cell
         }
     

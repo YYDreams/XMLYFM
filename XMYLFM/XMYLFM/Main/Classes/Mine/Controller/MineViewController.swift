@@ -159,6 +159,7 @@ extension MineViewController{
             
             self.model = object
             
+            
             self.tableView.reloadData()
             
         }

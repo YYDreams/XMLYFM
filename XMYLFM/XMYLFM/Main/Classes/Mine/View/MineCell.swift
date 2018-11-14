@@ -105,7 +105,7 @@ class MineCell: BaseCell {
         
         rightView.layer.mask = maskLayer
         
-        if UserInfoModel.isLoginStatus() {
+        if LoginHelper.sharedInstance.userInfo?.isLogin ?? false {
             subTitleLabel.layer.masksToBounds = true
             subTitleLabel.layer.cornerRadius = 8
             subTitleLabel.layer.borderWidth = 1.0;

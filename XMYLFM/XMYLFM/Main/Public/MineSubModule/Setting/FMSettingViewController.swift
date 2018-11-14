@@ -12,18 +12,26 @@ class FMSettingViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+          title = "设置"
+          setupSubView()
+        
+    }
+    
+    private func setupSubView(){
         
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SettingCellID")
         
-        let footView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 45))
+        let footView = UIView(frame: CGRect(x: 0, y: 0, width: screenW, height: 50))
         
-        let footerBtn = UIButton(frame: CGRect(x: 10, y: 0, width: screenW - 2 * 10 , height: 45))
+        
+        let footerBtn = UIButton(frame: CGRect(x: 10, y: 5, width: screenW - 2 * 10 ,height: 40))
         footerBtn.addTarget(self, action: #selector(logoutBtnOnClick), for: .touchUpInside)
         footerBtn.setTitleColor(UIColor.white, for: .normal)
         footerBtn.backgroundColor = kThemeColor
         footerBtn.setTitle("退出", for: .normal)
+        footerBtn.layer.cornerRadius = 10
+        footerBtn.layer.masksToBounds = true
         footView.addSubview(footerBtn)
         
         
@@ -34,12 +42,7 @@ class FMSettingViewController: BaseTableViewController {
 
     @objc private func logoutBtnOnClick(){
         
-        
-        print("logoutBtnOnClick")
-        
-      LoginHelper.sharedInstance.clearUserInfo()
-        
-        
+       LoginHelper.loginOutDataHandle()
         navigationController?.popViewController(animated: true)
         
     }

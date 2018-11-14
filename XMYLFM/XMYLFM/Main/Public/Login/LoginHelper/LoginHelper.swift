@@ -13,8 +13,6 @@ var instance:LoginHelper? = nil
 
 class LoginHelper: NSObject {
     
-   
-
     var userInfo:UserInfoModel? {
         didSet{
             guard userInfo != nil else {
@@ -22,7 +20,6 @@ class LoginHelper: NSObject {
             }
         }
     }
-    
     static let sharedInstance: LoginHelper = {
         
           instance = LoginHelper()
@@ -41,27 +38,31 @@ class LoginHelper: NSObject {
         
     }()
     
-    
-//保存用户信息
+    //MARK:保存用户信息
     func saveUserInfo(userInfo: UserInfoModel) {
-        
         
         NSKeyedArchiver.archiveRootObject(userInfo, toFile: UserDataFilePath)
     }
-    
-    
-    //清除用户信息
+    //MARK:清除用户信息
     func clearUserInfo() {
         
         instance = nil
-
         userInfo?.token = nil
-        NotificationCenter.default.post(name: NSNotification.Name(kLogOutNotification), object: nil)
-
         let clearUserInfo:Bool = ((try?  FileManager.default.removeItem(atPath: UserDataFilePath)) != nil)
         
         clearUserInfo ? print("清除用户数据成功"):print("清除用户数据失败")
     }
-  
     
+    //MARK:登录成功
+    class func loginSuccessDataHandle(){
+        
+        NotificationCenter.default.post(name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+    }
+    //MARK:退出登录 数据清理
+    class func loginOutDataHandle() {
+        
+        LoginHelper.sharedInstance.clearUserInfo()
+        
+        NotificationCenter.default.post(name: NSNotification.Name(kLogOutNotification), object: nil)
+    }
 }

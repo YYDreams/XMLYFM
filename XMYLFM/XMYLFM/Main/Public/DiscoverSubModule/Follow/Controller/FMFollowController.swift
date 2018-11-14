@@ -31,6 +31,8 @@ class FMFollowController: UIViewController,LTTableViewProtocal {
         glt_scrollView = tableView
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLogOutNotification), object: nil)
+
     }
     
     deinit {
@@ -53,7 +55,7 @@ extension FMFollowController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return !UserInfoModel.isLoginStatus() ? 0 : 10
+        return !( LoginHelper.sharedInstance.userInfo?.isLogin ?? false) ? 0 : 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -1,87 +1,61 @@
 //
-//  FMHomeModuleCell.swift
+//  FMHomePaidCategoryCell.swift
 //  XMYLFM
 //
-//  Created by flowerflower on 2018/11/13.
+//  Created by flowerflower on 2018/11/14.
 //  Copyright © 2018年 flowerflower. All rights reserved.
-//
+//精品
 
 import UIKit
 
-class FMHomeModuleCell: BaseCell {
+class FMHomePaidCategoryCell: FMHomeBaseCell {
+    
 
-    
-    
-    private lazy var collectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout.init()
-        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        layout.minimumInteritemSpacing = 5 //列间隙
-        layout.minimumLineSpacing = 10
-        layout.scrollDirection = .horizontal
-        
-        layout.itemSize = CGSize(width: (screenW - 45)/3, height:(screenW - 120)/2.0)
-        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(FMHomeModuleCollectionCell.self, forCellWithReuseIdentifier: "FMHomeModuleCollectionCellID")
-        return collectionView
-    }()
-    
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupSubView()
-        
+        collectionView.register(FMHomePaidCategoryCollectionCell.self, forCellWithReuseIdentifier: "FMHomePaidCategoryCollectionCellID")
+        layout.itemSize = CGSize(width: (screenW - 45)/3, height:150)
+        layout.scrollDirection = .horizontal
     }
-    var dataArr:[FMHotSearchListModel] = [FMHotSearchListModel](){
-        
-        didSet{
-            self.collectionView.reloadData()
-        }
-    }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-}
-
-extension  FMHomeModuleCell{
     
-    private func setupSubView(){
+    var dataArr:[FMHomePaidCategoryModel] = [FMHomePaidCategoryModel]() {
         
-        addSubview(collectionView)
-        self.collectionView.snp.makeConstraints { (make) in
-            
-            make.top.left.right.bottom.equalToSuperview()
+        didSet{
+            self.collectionView.reloadData()
         }
-        print("==================collection\(collectionView.frame)")
+        
+        
     }
+
     
+
 }
 
-extension FMHomeModuleCell:UICollectionViewDelegate,UICollectionViewDataSource{
+extension FMHomePaidCategoryCell{
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return self.dataArr.count
+        return dataArr.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FMHomeModuleCollectionCellID", for: indexPath) as! FMHomeModuleCollectionCell
-//        cell.model = self.dataArr[indexPath.row]
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FMHomePaidCategoryCollectionCellID", for: indexPath) as! FMHomePaidCategoryCollectionCell
+        cell.model = self.dataArr[indexPath.row]
         return cell
     }
-
+    
+    
+    
 }
 
-
-
-class FMHomeModuleCollectionCell: UICollectionViewCell {
+class FMHomePaidCategoryCollectionCell: UICollectionViewCell {
     
     
     //整个内容View
@@ -130,29 +104,60 @@ class FMHomeModuleCollectionCell: UICollectionViewCell {
     private lazy var playLabel: UILabel = {
         
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
-        label.textColor = UIColor.white
+        label.font = UIFont.systemFont(ofSize: 8)
+        label.textColor = k6Color
         return label
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupSubView()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    var model: FMHomePaidCategoryModel? {
+        
+        didSet{
+            
+            guard let model = model else {
+                return
+            }
+            
+            
+            imgView.sd_setImage(with: URL(string: model.pic!), placeholderImage: UIImage(named: ""))
+            titleLabel.text  = model.title
+            
+            
+            var  playsCounts: String?
+            if model.playsCount > 100000000 {
+                
+                playsCounts = String(format: "%.1f亿", Double(model.playsCount)/100000000)
+                
+            }else if (model.playsCount > 10000 ){
+                
+                playsCounts = String(format: "%.1f万", Double(model.playsCount)/10000)
+                
+                
+            }else{
+                playsCounts = "\(model.playsCount)"
+            }
+            
+            playLabel.text = playsCounts
+        }
+        
+    }
     
     
- 
     
 }
 
-extension FMHomeModuleCollectionCell{
+extension FMHomePaidCategoryCollectionCell{
     
-    private func  setupSubView(){
+    private func setupSubView(){
+        
         
         addSubview(bgView)
         bgView.addSubview(imgView)
@@ -161,44 +166,42 @@ extension FMHomeModuleCollectionCell{
         bgView.addSubview(playImgView)
         bgView.addSubview(playLabel)
         
-
+        
         bgView.snp.makeConstraints { (make) in
             make.top.bottom.left.right.equalToSuperview()
         }
+        
 
-        print("==1111111111111====\(bgView.frame)")
         imgView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-//            make.bottom.equalTo(titleLabel.snp.top)
-             make.height.equalTo(55)
-
+            make.bottom.equalTo(bgView.snp.bottom).offset(-40)
+            
         }
         moduleLabel.snp.makeConstraints { (make) in
             make.left.top.equalTo(bgView)
             make.height.equalTo(15)
-            make.width.equalTo(50)
-
+            
         }
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(bgView.snp.left)
             make.right.equalTo(bgView.snp.right)
-            make.bottom.equalTo(playImgView.snp.top).offset(-2)
-        }
-
-
-        playLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(playImgView.snp.right)
-            make.bottom.equalTo(bgView.snp.bottom).offset(-3)
-
+            make.top.equalTo(imgView.snp.bottom)
         }
         playImgView.snp.makeConstraints { (make) in
             make.left.equalTo(bgView.snp.left).offset(5)
             make.height.width.equalTo(10)
-            make.bottom.equalTo(bgView.snp.bottom).offset(-3)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
         }
         
+        playLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(playImgView.snp.right)
+            make.top.equalTo(playImgView.snp.top)
+            
+        }
+
         
     }
     
+    
+    
 }
-

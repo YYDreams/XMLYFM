@@ -7,62 +7,61 @@
 //
 
 import UIKit
+import Foundation
+var instance:LoginHelper? = nil
 
-class LoginHelper: NSObject,NSCoding {
 
+class LoginHelper: NSObject {
     
-    
-    var token: String? //户授权的唯一票据
-    
-    var uid: String?
-    
-    
-    class func isLoginStatus() -> Bool {
-        
-        return LoginHelper.loadAccount() != nil
+   
+
+    var userInfo:UserInfoModel? {
+        didSet{
+            guard userInfo != nil else {
+                return
+            }
+        }
     }
     
-    static var account: LoginHelper?
-
-    class func loadAccount() -> LoginHelper? {
-    
+    static let sharedInstance: LoginHelper = {
         
-        // 1.判断是否已经进行加载过
+          instance = LoginHelper()
+        
+        instance?.userInfo = UserInfoModel()
 
-        if account != nil {
-            return account
+         let saveModel = NSKeyedUnarchiver.unarchiveObject(withFile: UserDataFilePath)
+        
+        print("path:\(UserDataFilePath)")
+        if (saveModel != nil) {
+            
+            instance?.userInfo = (saveModel as! UserInfoModel)
         }
         
-        // 2.如果没有加载过，进行加载
+        return instance!
+        
+    }()
+    
+    
+//保存用户信息
+    func saveUserInfo(userInfo: UserInfoModel) {
+        
+        
+        NSKeyedArchiver.archiveRootObject(userInfo, toFile: UserDataFilePath)
+    }
+    
+    
+    //清除用户信息
+    func clearUserInfo() {
+        
+        instance = nil
 
-        account = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? LoginHelper
+        userInfo?.token = nil
+        NotificationCenter.default.post(name: NSNotification.Name(kLogOutNotification), object: nil)
+
+        let clearUserInfo:Bool = ((try?  FileManager.default.removeItem(atPath: UserDataFilePath)) != nil)
         
-    
-        return account
-    
+        clearUserInfo ? print("清除用户数据成功"):print("清除用户数据失败")
     }
-    
-    static let filePath = NSHomeDirectory() + "/Library/Caches" + "/account.plist"
-    
-    func saveAccount(){
-        //  将对象写入到文件中(归档) NSKeyedArchiver
-        NSKeyedArchiver.archiveRootObject(self, toFile: LoginHelper.filePath)
-        
-    }
-    
-    
-    public func encode(with aCoder: NSCoder) {
-        
-        
-        aCoder.encode(token, forKey: "token")
-        aCoder.encode(uid, forKey: "uid")
-    }
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        token = aDecoder.decodeObject(forKey: "token") as? String
-        uid = aDecoder.decodeObject(forKey: "uid") as? String
-        
-    }
+  
     
 }

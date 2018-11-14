@@ -56,7 +56,7 @@ class DiscoverViewController: BaseTableViewController {
     private lazy var advancedManager: LTAdvancedManager = {
 
         
-        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
+        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y: navHeight, width: screenW, height: screenH), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
             guard let strongSelf = self else { return UIView() }
             let headerView = strongSelf.headerView
             return headerView

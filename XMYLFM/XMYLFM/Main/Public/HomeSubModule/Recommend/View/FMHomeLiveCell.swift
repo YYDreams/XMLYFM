@@ -17,13 +17,8 @@ class FMHomeLiveCell: FMHomeBaseCell {
         didSet{
             
             self.collectionView.reloadData()
-            
         }
-        
-        
     }
-    
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

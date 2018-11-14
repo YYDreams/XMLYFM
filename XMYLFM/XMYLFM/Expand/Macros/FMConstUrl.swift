@@ -26,8 +26,11 @@ let MAIN_URL_M_XMLY = "http://m.ximalaya.com"
 //首页tab数据   显示推荐 vip 小说 直播等等
 let kHomeTabsUrl = "/v2/5be3dc6a2f00004e00d9f199"
 
-//轮播图 collectionView中的(经典必听、每日必听等等)   喜马热搜榜   精品 懒人一键听
-let kHomeAllUrl = "/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2"
+//轮播图 collectionView中的(经典必听、每日必听等等)   喜马热搜榜 ≈
+//let kHomeAllUrl = "/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2"
+
+//跟上面的区别在于 这个接口有 精品和懒人一键听的数据 而上面的接口有返回喜马热搜榜 注意 这个的前缀是MAIN_URL_6 上面的是MAIN_URL
+let kHomeAllUrl = "/discovery-feed/v2/mix/ts-1541755553738?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541755553739&traitKey=&onlyBody=false&offset=0&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2"
 
 //http://mobile.ximalaya.com/discovery-feed/v2/mix/ts-1541659816686?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541659816686&traitKey=&onlyBody=false&offset=15&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2
 //http://180.153.255.6/discovery-feed/v2/mix/ts-1541755553738?appid=0&scale=2&uid=0&version=6.5.24&channel=ios-b1&deviceId=BBB40C91-2640-4EFE-BDEA-3368D6BE4B43&xt=1541755553739&traitKey=&onlyBody=false&offset=0&operator=3&traitValue=&network=WIFI&code=43_440000_4403&device=iPhone&categoryId=-2

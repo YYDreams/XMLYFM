@@ -37,7 +37,7 @@ extension BaseTabBarViewController{
         let normalImageNames = ["home","find","","favor","me"]
         let selectImageNames = ["home_1","find_1","","favor_1","me_1"]
         
-        let mineTitle = !UserInfoModel.isLoginStatus() ? "未登录" : "账户"
+        let mineTitle = !(LoginHelper.sharedInstance.userInfo?.isLogin ?? false)  ? "未登录" : "账户"
         let titles = ["首页","我听","","发现",mineTitle]
         
         for (index, vc) in controllers.enumerated() {

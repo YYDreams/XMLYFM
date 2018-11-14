@@ -36,21 +36,6 @@ class FMHotSearchListCell: FMHomeBaseCell {
 extension FMHotSearchListCell{
     
     
-    private func setupSubView(){
-        
-        addSubview(collectionView)
-        self.collectionView.snp.makeConstraints { (make) in
-            
-            make.top.left.right.bottom.equalToSuperview()
-        }
-    }
-    
-    
-}
-
-extension FMHotSearchListCell{
-    
-    
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.dataArr.count

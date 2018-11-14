@@ -36,11 +36,19 @@ let k6Color = UIColor.withHex(hexString: "666666")
 
 let k9Color = UIColor.withHex(hexString: "999999")
 
+let kB2Color = UIColor.withHex(hexString: "B2B2B2")
+
+
+
+let UserDataFilePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/userAccount.plist"
+
 
 //按钮的背景颜色
 let kBtnBgColor = UIColor.withHex(hexString: "FFE4E1")
 /***************************** Key *******************************/
 
+
+let kLoginStatus = "kLoginStatus";
 
 //Recommend Photo Index Key
 let kRecommendShowPhotoBrowserIndexKey  = "kRecommendShowPhotoBrowserIndexKey"
@@ -55,6 +63,10 @@ let kRecommendShowPhotoBrowserUrlKey  = "kRecommendShowPhotoBrowserUrlKey"
 
 //login Success
 let kLoginSuccessNotification  = "kLoginSuccessNotification"
+
+
+//logOut
+let kLogOutNotification  = "kLogOutNotification"
 
 // Recommend didSelectItemAt
 let kRecommendPhotoSelectItemNotification  = "kRecommendPhotoSelectItemNotification"

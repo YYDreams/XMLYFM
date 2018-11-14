@@ -101,5 +101,25 @@ class FMHomeAlbumModel: BaseModel {
     var playsCounts: Int = 0
     var tracks: Int = 0
     
-    
+     var cellHeight: CGFloat = 0
 }
+
+
+class FMHomePaidCategoryModel: BaseModel {
+    
+    
+    var pic: String?
+    var title: String?
+    var playsCount: Int = 0
+}
+
+
+
+class FMHomeOneKeyListenModel: BaseModel {
+    
+    
+    var channelName: String?
+    var cover: String?
+    var onLineNum: Int = 0
+}
+

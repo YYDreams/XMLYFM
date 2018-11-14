@@ -19,16 +19,17 @@ class FMHomeTableViewCell: BaseCell {
      lazy var categoryLabel: UILabel = {
         
         let categoryLabel = UILabel()
-        categoryLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        categoryLabel.font = UIFont.systemFont(ofSize: 12)
         
         return categoryLabel
     }()
     
-    //订阅按钮
+    //x按钮
     private lazy var btn: UIButton = {
         
         let btn = UIButton()
-        btn.titleLabel?.text = "x"
+        btn.setTitle("x", for: .normal)
+        btn.setTitleColor(kB2Color, for: .normal)
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 8
         btn.layer.borderWidth = 1.0;
@@ -51,7 +52,7 @@ class FMHomeTableViewCell: BaseCell {
     private lazy var titleLabel: UILabel = {
         
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        titleLabel.font = UIFont.systemFont(ofSize: 14)
         
         return titleLabel
     }()
@@ -60,6 +61,7 @@ class FMHomeTableViewCell: BaseCell {
         
         let subTitleLabel = UILabel()
         subTitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subTitleLabel.numberOfLines = 2 
         subTitleLabel.textColor = k6Color
         
         return subTitleLabel
@@ -94,7 +96,7 @@ class FMHomeTableViewCell: BaseCell {
         
         let playsCountsLabel = UILabel()
         playsCountsLabel.font = UIFont.boldSystemFont(ofSize: 10)
-        playsCountsLabel.textColor = k6Color
+        playsCountsLabel.textColor = k9Color
         return playsCountsLabel
     }()
     
@@ -112,7 +114,7 @@ class FMHomeTableViewCell: BaseCell {
         
         let tracksLabel = UILabel()
         tracksLabel.font = UIFont.boldSystemFont(ofSize: 10)
-        tracksLabel.textColor = k6Color
+        tracksLabel.textColor = k9Color
         return tracksLabel
     }()
     
@@ -145,7 +147,7 @@ class FMHomeTableViewCell: BaseCell {
             imgView.sd_setImage(with: URL(string: model.coverPath!), placeholderImage: UIImage(named: ""))
             titleLabel.text  = model.title
             subTitleLabel.text = model.intro
-            
+            categoryLabel.text = model.category
             
             var  playsCounts: String?
             if model.playsCounts > 100000000 {
@@ -165,6 +167,16 @@ class FMHomeTableViewCell: BaseCell {
             
             tracksLabel.text = "\(model.tracks)集"
            
+            
+            
+            if model.cellHeight == 0 {
+                layoutIfNeeded()
+                model.cellHeight = (bottomView.frame).maxY  //手动计算cell的高度 并将高度保存到viewModel模型中
+                
+                print( "cellHeight==\(model.cellHeight)")
+            }
+            
+            
         }
         
     }
@@ -188,6 +200,7 @@ extension FMHomeTableViewCell{
         bottomView.addSubview(titleLabel)
         bottomView.addSubview(subTitleLabel)
         bottomView.addSubview(imgView)
+        
         bottomView.addSubview(countView)
         
         countView.addSubview(playImgView)
@@ -198,7 +211,7 @@ extension FMHomeTableViewCell{
         topView.snp.makeConstraints { (make) in
             
             make.left.top.right.equalToSuperview()
-            make.height.equalTo(40)
+            make.height.equalTo(30)
         }
         
         categoryLabel.snp.makeConstraints { (make) in
@@ -206,21 +219,31 @@ extension FMHomeTableViewCell{
             make.left.equalTo(15)
             make.centerY.equalTo(topView.snp.centerY)
         }
-        imgView.snp.makeConstraints { (make) in
-
-            make.right.equalTo(-15)
-            make.width.height.equalTo(80)
-            make.top.equalTo(topView.snp.bottom)
-
+        
+        btn.snp.makeConstraints { (make) in
+            make.right.equalTo(-20)
+            make.width.equalTo(25)
+            make.height.equalTo(20)
+            make.centerY.equalTo(topView.snp.centerY)
+            
+            
         }
-        
-        
+
         bottomView.snp.makeConstraints { (make) in
             
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.top.equalTo(topView.snp.bottom)
+            make.bottom.equalToSuperview().offset(-10)
+            
             }
-        
+
+        imgView.snp.makeConstraints { (make) in
+            
+            make.right.equalTo(-15)
+            make.width.height.equalTo(60)
+            make.centerY.equalTo(bottomView.snp.centerY)
+            
+        }
           titleLabel.snp.makeConstraints { (make) in
             
             make.top.equalTo(bottomView.snp.top).offset(5)
@@ -239,38 +262,31 @@ extension FMHomeTableViewCell{
         
         countView.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.left)
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(10)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(3)
             make.height.equalTo(20)
             make.width.equalTo(200)
         }
         playImgView.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.left)
             make.height.width.equalTo(10)
-            make.centerY.equalTo(bottomView.snp.centerY)
+            make.centerY.equalTo(countView.snp.centerY)
         }
         playsCountsLabel.snp.makeConstraints { (make) in
             
             make.left.equalTo(playImgView.snp.right)
-            make.centerY.equalTo(bottomView.snp.centerY)
+            make.centerY.equalTo(countView.snp.centerY)
         }
         tracksImgView.snp.makeConstraints { (make) in
             make.left.equalTo(playsCountsLabel.snp.right).offset(20)
             make.height.width.equalTo(10)
-            make.centerY.equalTo(bottomView.snp.centerY)
+            make.centerY.equalTo(countView.snp.centerY)
         }
         tracksLabel.snp.makeConstraints { (make) in
             make.left.equalTo(tracksImgView.snp.right)
-            make.centerY.equalTo(bottomView.snp.centerY)
+            make.centerY.equalTo(countView.snp.centerY)
         }
         
-        btn.snp.makeConstraints { (make) in
-            make.right.equalTo(-20)
-            make.height.equalTo(25)
-            make.width.equalTo(45)
-            make.centerY.equalTo(topView.snp.centerY)
-            
-            
-        }
+     
         
         
     }

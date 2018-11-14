@@ -33,9 +33,12 @@ class FMLoginViewController: UIViewController {
             let infoModel:UserInfoModel = UserInfoModel.deserialize(from: resultDic)!
             
             if infoModel.ret == 0 {
+//                LoginHelper.sharedInstance.saveUserInfo(userInfo: infoModel)
+//                infoModel.saveAccount()
+                LoginHelper.sharedInstance.userInfo = infoModel
+                LoginHelper.sharedInstance.saveUserInfo(userInfo: infoModel)
                 
-                infoModel.saveAccount()
-                    
+                
                     NotificationCenter.default.post(name: NSNotification.Name(kLoginSuccessNotification), object: nil)
                     
                     self.dismiss(animated: true, completion: nil)

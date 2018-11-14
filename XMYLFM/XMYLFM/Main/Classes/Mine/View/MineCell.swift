@@ -8,7 +8,7 @@
 
 import UIKit
 import SDWebImage
-
+import FLAnimatedImage
 class MineCell: BaseCell {
 
 
@@ -23,7 +23,7 @@ class MineCell: BaseCell {
     
     @IBOutlet weak var followingsLabel: UILabel! //粉丝+关注
     
-    @IBOutlet weak var iconPathImgView: UIImageView! // 右侧积分图标
+    @IBOutlet weak var iconPathImgView: FLAnimatedImageView! // 右侧积分图标
     
     @IBOutlet weak var jfTipLabel: UILabel!
     
@@ -32,6 +32,7 @@ class MineCell: BaseCell {
     @IBOutlet weak var subTitleLabel: UILabel!  //听满3小时。。。。。
     @IBOutlet weak var followingAndUserNameConst: NSLayoutConstraint!
     
+    @IBOutlet weak var rightView: UIView!
     
     /**
      "checkInReminder":"待领取积分",
@@ -52,9 +53,9 @@ class MineCell: BaseCell {
                 return
             }
             
-            userTitleLabel.isHidden  = !UserInfoModel.isLoginStatus()
+            userTitleLabel.isHidden  = !( LoginHelper.sharedInstance.userInfo?.isLogin ?? false)
             
-            if !UserInfoModel.isLoginStatus() {
+            if !( LoginHelper.sharedInstance.userInfo?.isLogin ?? false) {
                 
                 userNameLabel.text = "点击登录"
                 
@@ -77,14 +78,13 @@ class MineCell: BaseCell {
                 let checkInReminder = model.checkInRemindInfo?.checkInReminder ?? ""
                 let checkInReward = model.checkInRemindInfo?.checkInReward ?? ""
                 jfTipLabel.text =  checkInReminder + "\n" + checkInReward
-                //FIXME: 待修改的问题 图片是gif做显示
                 if   model.checkInRemindInfo?.iconPath != nil{
                     
                     
                     let url = URL(string: (model.checkInRemindInfo?.iconPath!)!)
                     
-                    let data =  NSData(contentsOf: url!)
-                    iconPathImgView.image = UIImage(data: data! as Data)
+                     let data =  NSData(contentsOf: url!)
+                    iconPathImgView.animatedImage = FLAnimatedImage(animatedGIFData: data! as Data)
                 }
                 
             }
@@ -96,6 +96,15 @@ class MineCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+  
+        let maskPath: UIBezierPath = UIBezierPath(roundedRect: self.rightView.bounds, byRoundingCorners: [.topLeft,.bottomLeft], cornerRadii: CGSize(width: 20, height: 20))
+        
+        let maskLayer:CAShapeLayer  = CAShapeLayer()
+         maskLayer.frame = rightView.bounds
+        maskLayer.path = maskPath.cgPath
+        
+        rightView.layer.mask = maskLayer
+        
         if UserInfoModel.isLoginStatus() {
             subTitleLabel.layer.masksToBounds = true
             subTitleLabel.layer.cornerRadius = 8
@@ -104,6 +113,7 @@ class MineCell: BaseCell {
             
             userTitleLabel.layer.masksToBounds = true
             userTitleLabel.layer.cornerRadius = 5
+            
             
         }
         
@@ -116,9 +126,10 @@ class MineCell: BaseCell {
         
         print("---------------------------")
         
-        if !UserInfoModel.isLoginStatus() {
+        sender.isUserInteractionEnabled  = !( LoginHelper.sharedInstance.userInfo?.isLogin ?? false)
+
+        if !( LoginHelper.sharedInstance.userInfo?.isLogin ?? false) {
             
-            sender.isUserInteractionEnabled  = false
 
             if self.handerLoginBtnOnClickCallBack != nil {
                 

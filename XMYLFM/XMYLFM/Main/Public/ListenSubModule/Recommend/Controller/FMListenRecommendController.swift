@@ -58,9 +58,9 @@ extension FMListenRecommendController{
     
     private func setupRefresh(){
         //HHRefreshGifHeader
-        tableView.mj_header =  MJRefreshGifHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+        tableView.mj_header =  HHRefreshGifHeader(refreshingTarget: self, refreshingAction: #selector(loadNewData))
         
-        tableView.mj_footer =  MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
+        tableView.mj_footer =  MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreData))
         
         tableView.mj_header.beginRefreshing()
         

@@ -27,12 +27,20 @@ class MineViewController: BaseTableViewController {
     }()
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+ 
+        print(LoginHelper.sharedInstance.userInfo?.isLogin ?? false )
+        
 
+        
+    }
 //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarItem.title = UserInfoModel.isLoginStatus() ? "账户" : "未登录"
+        self.tabBarItem.title = LoginHelper.sharedInstance.userInfo?.isLogin ?? false ? "账户" : "未登录"
 
            setupNav()
         
@@ -41,7 +49,6 @@ class MineViewController: BaseTableViewController {
         loadDataFormNetwork()
 
         addNotification()
-
     }
     
     deinit {
@@ -56,6 +63,9 @@ extension MineViewController{
     private func addNotification(){
         
                 NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginOutNotifice), name: NSNotification.Name(kLogOutNotification), object: nil)
+
+
     }
   
 }
@@ -70,7 +80,14 @@ extension MineViewController{
         tableView.register(UINib(nibName: "MineCell", bundle: nil), forCellReuseIdentifier: MineCellID)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
-        tableView.delegate = self
+        tableView.snp.makeConstraints{ (make) in
+            
+            make.left.equalTo(self.view)
+            make.width.equalTo(screenW)
+            make.top.equalTo(navHeight)
+            make.height.equalTo(screenH - navHeight - tabBarHeight)
+        }
+
     }
     
     private func setupNav(){
@@ -89,9 +106,7 @@ extension MineViewController{
     @objc private func loginSuccess(){
         
         
-        print("token:\(String(describing:UserInfoModel.loadAccount()?.token))")
-        
-        print("isLoginStatus:-----\(UserInfoModel.isLoginStatus())")
+        print("loginSuccess----\(LoginHelper.sharedInstance.userInfo?.token)")
         loadDataFormNetwork()
         
         
@@ -99,6 +114,15 @@ extension MineViewController{
         self.tabBarItem.title = "账户"
         
         
+    }
+    @objc private func loginOutNotifice(){
+        
+                
+        print("loginOutNotifice----\(LoginHelper.sharedInstance.userInfo?.token)")
+        
+       self.tabBarItem.title  = !(LoginHelper.sharedInstance.userInfo?.isLogin ?? false) ? "未登录" : "账户"
+
+        self.tableView.reloadData()
     }
     
     @objc private func messageOnClick(){
@@ -109,8 +133,9 @@ extension MineViewController{
     @objc private func settingOnClick(){
         
         print("settingOnClick")
-
-        UserInfoModel.clearAccount()
+    navigationController?.pushViewController(FMSettingViewController(), animated: true)
+        
+        
         
     }
     
@@ -145,7 +170,7 @@ extension MineViewController{
 //MARK: <UITableViewDataSource>
 extension MineViewController{
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         
         return  dataArr.count + 1
         
@@ -156,19 +181,19 @@ extension MineViewController{
         return section == 0 ? 1 : dataArr[section - 1].count
 
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-        return indexPath.section == 0 ? 375 : 45
+        return indexPath.section == 0 ? 355 : 45
         
     }
     
-   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
     return UIView()
     
     }
-   override  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 10
     }

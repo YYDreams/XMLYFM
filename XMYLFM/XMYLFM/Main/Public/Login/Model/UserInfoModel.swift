@@ -17,44 +17,14 @@ class UserInfoModel: NSObject,HandyJSON,NSCoding {
     
     var ret: Int = 1 //返回的状态码  0: 表示成功
     
-    class func isLoginStatus() -> Bool { //保存用户的登录状态
+    var isLogin: Bool{
         
-        return UserInfoModel.loadAccount() != nil
-    }
-    
-    static var account: UserInfoModel?
-    
-    class func loadAccount() -> UserInfoModel? {
-        
-        // 1.判断是否已经进行加载过
-        if account != nil {
-            return account
+        if LoginHelper.sharedInstance.userInfo?.token != nil {
+
+            return true
+        }else {
+            return false
         }
-        
-        // 2.如果没有加载过，进行加载
-        account = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? UserInfoModel
-
-        return account
-        
-    }
-    
-    static let filePath = NSHomeDirectory() + "/Library/Caches" + "/account.plist"
-    
-    func saveAccount(){
-        print("filePath:\(UserInfoModel.filePath)")
-        
-        //  将对象写入到文件中(归档) NSKeyedArchiver
-        NSKeyedArchiver.archiveRootObject(self, toFile: UserInfoModel.filePath)
-        
-    }
-  class func clearAccount(){
-  
-    let clearUserInfo:Bool = ((try?  FileManager.default.removeItem(atPath: UserInfoModel.filePath)) != nil)
-    
-    
-    clearUserInfo ? print("清除用户数据成功"):print("清除用户数据失败");
-
-  
     }
     public func encode(with aCoder: NSCoder) {
 

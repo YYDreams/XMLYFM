@@ -18,10 +18,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = BaseTabBarViewController()
-        window?.makeKeyAndVisible();
+        
+        initLinkPage()
+        
+        window?.makeKeyAndVisible()
         return true
     }
+    
+    func initLinkPage() {
+        
+        let isFristOpen = UserDefaults.standard.object(forKey: "isFristOpen")
+        
+        if isFristOpen == nil {
+            let guideVC  = FMGuideViewController()
+            
+            guideVC.finishBtnClickCallBack = {[weak self]  () -> Void in
+                
+                
+
+                self?.initRootViewController()
+                
+            }
+            
+            window?.rootViewController = guideVC
+            
+            UserDefaults.standard.set("isFristOpen", forKey: "isFristOpen")
+            
+        }else{
+            
+            
+            loadAdViewController()
+            
+        }
+        
+        
+    }
+    
+    func loadAdViewController(){
+        
+        let adVC = FMAdViewController()
+        
+        adVC.skipBtnClickCallBack = {  () -> Void in
+            
+
+            self.initRootViewController()
+        }
+        window?.rootViewController = adVC
+
+    }
+
+    
+    func initRootViewController() {
+        window?.rootViewController = BaseTabBarViewController()
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

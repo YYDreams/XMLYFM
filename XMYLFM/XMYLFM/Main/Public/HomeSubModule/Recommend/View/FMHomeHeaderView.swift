@@ -130,7 +130,6 @@ class FMBannerCell: UICollectionViewCell {
         
         let imgView = UIImageView()
        imgView.layer.cornerRadius = 6
-        imgView.backgroundColor = UIColor.orange
         imgView.layer.masksToBounds = true
         
         return imgView

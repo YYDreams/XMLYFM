@@ -30,8 +30,8 @@ class FMFollowController: UIViewController,LTTableViewProtocal {
         self.view.addSubview(tableView)
         glt_scrollView = tableView
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLogOutNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessNotification), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginOutNotification), name: NSNotification.Name(kLogOutNotification), object: nil)
 
     }
     
@@ -39,13 +39,18 @@ class FMFollowController: UIViewController,LTTableViewProtocal {
         NotificationCenter.default.removeObserver(self)
         
     }
-    @objc private func loginSuccess(){
+    @objc private func loginSuccessNotification(){
         
         self.tableView.reloadData()
         
         
     }
-
+    @objc private func loginOutNotification(){
+        
+        self.tableView.reloadData()
+        
+        
+    }
 
 }
 //MARK: <UITableViewDelegate,UITableViewDataSource>
@@ -105,10 +110,7 @@ extension FMFollowController:DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
         let loginVc = BaseNavViewController(rootViewController: FMLoginViewController())
         
         self.present(loginVc, animated: true, completion: nil)
-        
-        print("=======\(button) \(button.titleLabel?.text)")
-        
-        
+
     }
     func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
         

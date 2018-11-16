@@ -25,17 +25,7 @@ class MineViewController: BaseTableViewController {
             [["title":"运营商服务"],["title":"商场"],["title":"0元购"],["title":"知识大使"],["title":"帮助与反馈"]]
               ]
     }()
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
- 
-        print(LoginHelper.sharedInstance.userInfo?.isLogin ?? false )
-        
 
-        
-    }
 //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,30 +40,24 @@ class MineViewController: BaseTableViewController {
 
         addNotification()
     }
-    
+//MARK: deinit
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 }
 
 //MARK: addNotification Method
-
 extension MineViewController{
     
     private func addNotification(){
         
-                NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loginOutNotifice), name: NSNotification.Name(kLogOutNotification), object: nil)
-
-
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessNotfication), name: NSNotification.Name(kLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginOutNotfication), name: NSNotification.Name(kLogOutNotification), object: nil)
     }
-  
 }
-
 
 //MARK: setupUI Methods
 extension MineViewController{
-    
     
     private func setupTableView(){
         
@@ -103,24 +87,20 @@ extension MineViewController{
 extension MineViewController{
     
     
-    @objc private func loginSuccess(){
+    @objc private func loginSuccessNotfication(){
         
-        
-        print("loginSuccess----\(LoginHelper.sharedInstance.userInfo?.token)")
+        print("loginSuccess----\(LoginHelper.sharedInstance.userInfo?.token ?? "")")
         loadDataFormNetwork()
-        
-        
-        
         self.tabBarItem.title = "账户"
         
         
     }
-    @objc private func loginOutNotifice(){
+    @objc private func loginOutNotfication(){
         
                 
-        print("loginOutNotifice----\(LoginHelper.sharedInstance.userInfo?.token)")
+        print("loginOutNotifice----\(LoginHelper.sharedInstance.userInfo?.token  ?? "")")
         
-       self.tabBarItem.title  = !(LoginHelper.sharedInstance.userInfo?.isLogin ?? false) ? "未登录" : "账户"
+       self.tabBarItem.title  =  "未登录"
 
         self.tableView.reloadData()
     }
@@ -134,9 +114,7 @@ extension MineViewController{
         
         print("settingOnClick")
     navigationController?.pushViewController(FMSettingViewController(), animated: true)
-        
-        
-        
+
     }
     
 }
@@ -168,7 +146,7 @@ extension MineViewController{
 }
 
 
-//MARK: <UITableViewDataSource>
+//MARK: <UITableViewDataSource,UITableViewDelegate>
 extension MineViewController{
     
      func numberOfSections(in tableView: UITableView) -> Int {

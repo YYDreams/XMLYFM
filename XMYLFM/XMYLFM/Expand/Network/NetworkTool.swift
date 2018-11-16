@@ -19,7 +19,7 @@ class NetworkTool: AFHTTPSessionManager{
     static let instance: NetworkTool = {
 
        let tool = NetworkTool()
-//        tool.responseSerializer.acceptableContentTypes?.insert("application/json","text/html", "text/javascript","text/plain")
+
         tool.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json","text/html", "text/javascript","text/plain") as? Set<String>
         
         return tool
@@ -29,8 +29,7 @@ class NetworkTool: AFHTTPSessionManager{
         
         return instance
     }
-    //定义完成闭包别名
-//    typealias Finished = (_ result : Any?, _ error: NSError?) ->()
+
 
 }
 

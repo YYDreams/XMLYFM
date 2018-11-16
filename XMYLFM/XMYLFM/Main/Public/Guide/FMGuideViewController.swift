@@ -12,14 +12,11 @@ private let FMFMGuideViewCellID = "FMFMGuideViewCellID"
 class FMGuideViewController: BaseUIViewController {
 
     var finishBtnClickCallBack: (()-> Void)?
-    private var dataArr = ["guide1", "guide1", "guide1", "guide1"]
+    private var dataArr = ["guide01.jpg","guide02.jpg","guide03.jpg"]
     private var isHiddenNextButton = true
 
     private lazy var collectionView: UICollectionView = {
-    
         let layout = UICollectionViewFlowLayout()
-
-        
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: screenW, height: screenH)

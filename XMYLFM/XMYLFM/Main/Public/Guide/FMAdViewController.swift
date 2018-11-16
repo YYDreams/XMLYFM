@@ -14,12 +14,14 @@ class FMAdViewController: BaseUIViewController {
      var skipBtnClickCallBack: (()-> Void)?
     
     private lazy var dataArr:Array = []
-    private lazy var imgView: UIImageView = {
+    // imageView
+   private lazy var imageView: UIImageView = {
         
-        let imgView = UIImageView(frame: UIScreen.main.bounds)
-//        imgView.backgroundColor = UIColor.yellow
-        return imgView
+        let imageView = UIImageView(frame: self.view.bounds)
         
+        imageView.contentMode = .scaleAspectFill
+        
+        return  imageView
     }()
     
     //引导页 按钮
@@ -29,6 +31,8 @@ class FMAdViewController: BaseUIViewController {
         skipBtn.backgroundColor = UIColor.red
         skipBtn.backgroundColor = kThemeColor
         skipBtn.setTitle("跳过", for: .normal)
+        skipBtn.layer.cornerRadius = 8
+        skipBtn.layer.masksToBounds = true
         skipBtn.addTarget(self, action: #selector(skipOnClick), for: .touchUpInside)
         
         return skipBtn
@@ -49,7 +53,7 @@ class FMAdViewController: BaseUIViewController {
         super.viewDidLoad()
 
         
-        view.addSubview(imgView)
+        view.addSubview(imageView)
         view.addSubview(skipBtn)
         loadDataFormNetwork()
         
@@ -57,13 +61,9 @@ class FMAdViewController: BaseUIViewController {
         
     }
 
-    
- 
 
-    
     private func loadDataFormNetwork(){
-        
-        //
+
         NetworkTool.shareNetworkTool().request(methodType: .GET, baseUrl: MAIN_URL_ADSE, urlString: kAdseUrl, parameters: [:]) { (result, error) in
             
             
@@ -75,24 +75,26 @@ class FMAdViewController: BaseUIViewController {
             
             guard let resultDataArr =  resultDic["data"] as? [[String: AnyObject]] else {return}
             
-            for data  in resultDataArr {
-                
-                let adModel: FMHomeRecommendHeaderModel = FMHomeRecommendHeaderModel.deserialize(from: data)!
-                
-                guard let cover = adModel.cover else {return}
-                self.dataArr.append(cover)
-                
-              
-                
-                
+            if let modelX = [FMHomeRecommendHeaderModel].deserialize(from: resultDataArr){
+                modelX.forEach({ (model) in
+                    guard let cover = model?.cover else {return}
+                    self.dataArr.append(cover)
+                    
+                })
             }
-            let string: String = (self.dataArr[0] as? String)!
+            //等同于上面
+//            for data  in resultDataArr {
+//                let adModel: FMHomeRecommendHeaderModel = FMHomeRecommendHeaderModel.deserialize(from: data)!
+//                guard let cover = adModel.cover else {return}
+//                self.dataArr.append(cover)
+//
+//            }
+            
+            guard let cover = self.dataArr[0] as? String else{ return }
             
             
-            self.imgView.image = UIImage(named: string)
-            
-            
-              print("cover\(self.dataArr[0])")
+            self.imageView.sd_setImage(with: URL(string: cover))
+
             
         }
         

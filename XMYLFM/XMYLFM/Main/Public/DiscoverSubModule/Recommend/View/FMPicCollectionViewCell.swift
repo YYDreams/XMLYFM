@@ -31,6 +31,8 @@ class FMPicCollectionViewCell: UICollectionViewCell {
         
         finishBtn.backgroundColor = kThemeColor
         finishBtn.setTitle("立即体验", for: .normal)
+        finishBtn.layer.cornerRadius = 8
+        finishBtn.layer.masksToBounds = true
         finishBtn.addTarget(self, action: #selector(finishOnClick), for: .touchUpInside)
         finishBtn.isHidden = true
         return finishBtn

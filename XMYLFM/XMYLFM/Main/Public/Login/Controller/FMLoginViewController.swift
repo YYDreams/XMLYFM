@@ -36,7 +36,7 @@ class FMLoginViewController: UIViewController {
                 LoginHelper.sharedInstance.userInfo = infoModel
                 LoginHelper.sharedInstance.saveUserInfo(userInfo: infoModel)
                 LoginHelper.loginSuccessDataHandle()
-                    self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
 
             }
         }

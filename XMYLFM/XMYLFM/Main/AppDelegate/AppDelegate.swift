@@ -18,56 +18,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        
+        //加载欢迎页面
         initLinkPage()
-        
         window?.makeKeyAndVisible()
         return true
     }
-    
     func initLinkPage() {
         
+        // 用来判断是否是第一次加载
         let isFristOpen = UserDefaults.standard.object(forKey: "isFristOpen")
         
         if isFristOpen == nil {
-            let guideVC  = FMGuideViewController()
             
+            let guideVC  = FMGuideViewController()
             guideVC.finishBtnClickCallBack = {[weak self]  () -> Void in
-                
-                
 
                 self?.initRootViewController()
-                
             }
-            
             window?.rootViewController = guideVC
             
             UserDefaults.standard.set("isFristOpen", forKey: "isFristOpen")
             
         }else{
             
-            
             loadAdViewController()
-            
         }
-        
-        
     }
-    
     func loadAdViewController(){
         
         let adVC = FMAdViewController()
         
         adVC.skipBtnClickCallBack = {  () -> Void in
             
-
             self.initRootViewController()
         }
         window?.rootViewController = adVC
-
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            
+            self.initRootViewController()
+        }
     }
-
-    
     func initRootViewController() {
         window?.rootViewController = BaseTabBarViewController()
     }

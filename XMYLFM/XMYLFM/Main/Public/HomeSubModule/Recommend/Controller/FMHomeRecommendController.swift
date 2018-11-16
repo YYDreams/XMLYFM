@@ -77,7 +77,7 @@ extension FMHomeRecommendController{
             
             make.left.top.equalTo(self.view)
             make.width.equalTo(screenW)
-            make.height.equalTo(screenH - navHeight - tabBarHeight)
+            make.height.equalTo(screenH - tabBarHeight)
         }
 
     }

@@ -35,6 +35,16 @@ class HomeViewController: BaseTableViewController {
         return ["推荐","VIP", "小说","直播","儿童","广播","精品","相声","人文","历史","段子","音乐"]
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+    }
     private lazy var layout: LTLayout = {
         let layout = LTLayout()
         layout.titleViewBgColor = UIColor.white
@@ -50,7 +60,7 @@ class HomeViewController: BaseTableViewController {
     
     
     private lazy var advancedManager: LTAdvancedManager = {
-        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y:navHeight, width: screenW, height: screenH), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
+        let advancedManager = LTAdvancedManager(frame: CGRect(x: 0, y:statusBarHeight, width: screenW, height: screenH ), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout, headerViewHandle: {[weak self] in
             guard let strongSelf = self else { return UIView() }
             let headerView = strongSelf.headerView
             return headerView
@@ -62,6 +72,9 @@ class HomeViewController: BaseTableViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        self.view.backgroundColor = UIColor.white
         self.view.addSubview(advancedManager)
 
         
